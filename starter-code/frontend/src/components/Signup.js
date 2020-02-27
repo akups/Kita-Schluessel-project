@@ -12,12 +12,14 @@ class Signup extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
+    //1.this is first send a data
     axios
       .post("/auth/signup", {
-        name: this.state.name,
+        username: this.state.username,
         password: this.state.password,
         role: this.state.role
       })
+      //3.
       .then(response => {
         this.props.history.push("/");
 
