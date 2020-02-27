@@ -4,15 +4,31 @@ const bcrypt = require("bcryptjs");
 const passport = require("passport");
 const User = require("../models/User");
 
-// This is signup for backend
+<<<<<<< HEAD
+//2.
+router.post("/signup", (req, res) => {
+  const { name, password, email, role } = req.body;
+
+  if (!name) {
+    return res.status(400).json({ message: "Username can't be empty" });
+  }
+  if (password.length < 8) {
+    return res.status(400).json({ message: "Password is too short" });
+  }
+=======
 router.post("/signup", (req, res) => {
   const { name, email, password, role } = req.body;
+>>>>>>> akua
 
   User.findOne({ email: email })
     .then(found => {
       // console.log("FOUND?", found);
       if (found) {
+<<<<<<< HEAD
         return res.status(400).json({ message: "This email already exists" });
+=======
+        return res.status(400).json({ message: "This email already exist" });
+>>>>>>> f9f9160c96d05acf545ae18714417ef66412d9d4
       }
       return bcrypt
         .genSalt()
@@ -43,7 +59,6 @@ router.post("/signup", (req, res) => {
     });
 });
 
-// This is log in for backend
 router.post("/login", (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
     if (err) {
