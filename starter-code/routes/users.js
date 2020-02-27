@@ -8,17 +8,17 @@ const User = require("../models/User");
 router.post("/signup", (req, res) => {
   const { name, password, email, role } = req.body;
 
-  if (!username) {
+  if (!name) {
     return res.status(400).json({ message: "Username can't be empty" });
   }
   if (password.length < 8) {
     return res.status(400).json({ message: "Password is too short" });
   }
 
-  User.findOne({ username: username })
+  User.findOne({ email: email })
     .then(found => {
       if (found) {
-        return res.status(400).json({ message: "Username is already taken" });
+        return res.status(400).json({ message: "This email already exist" });
       }
       return bcrypt
         .genSalt()
@@ -26,7 +26,7 @@ router.post("/signup", (req, res) => {
           return bcrypt.hash(password, salt);
         })
         .then(hash => {
-          return User.create({ username: username, password: hash });
+          return User.create({ name: name, password: hash });
         })
         .then(newUser => {
           // passport login
