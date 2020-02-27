@@ -6,7 +6,7 @@ const User = require("../models/User");
 
 //2.
 router.post("/signup", (req, res) => {
-  const { username, password, role } = req.body;
+  const { name, password, email, role } = req.body;
 
   if (!username) {
     return res.status(400).json({ message: "Username can't be empty" });
