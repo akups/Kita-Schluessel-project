@@ -9,7 +9,7 @@ const User = require("../models/User");
 router.post("/signup", (req, res) => {
   const { name, password, email, role } = req.body;
 
-  if (!username) {
+  if (!name) {
     return res.status(400).json({ message: "Username can't be empty" });
   }
   if (password.length < 8) {
@@ -24,7 +24,11 @@ router.post("/signup", (req, res) => {
     .then(found => {
       // console.log("FOUND?", found);
       if (found) {
+<<<<<<< HEAD
         return res.status(400).json({ message: "This email already exists" });
+=======
+        return res.status(400).json({ message: "This email already exist" });
+>>>>>>> f9f9160c96d05acf545ae18714417ef66412d9d4
       }
       return bcrypt
         .genSalt()
@@ -32,6 +36,7 @@ router.post("/signup", (req, res) => {
           return bcrypt.hash(password, salt);
         })
         .then(hash => {
+<<<<<<< HEAD
           // console.log(name, role, email, password);
           return User.create({
             name: name,
@@ -39,6 +44,9 @@ router.post("/signup", (req, res) => {
             email: email,
             password: hash
           });
+=======
+          return User.create({ name: name, password: hash });
+>>>>>>> f9f9160c96d05acf545ae18714417ef66412d9d4
         })
         .then(newUser => {
           // console.log("HELLO", newUser);

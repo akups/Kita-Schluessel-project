@@ -18,21 +18,22 @@ class Signup extends Component {
     });
   };
 
-  //   handleSubmit = event => {
-  //     event.preventDefault();
+  handleSubmit = event => {
+    event.preventDefault();
 
-  //     //1.this is first send a data
-  //     axios
-  //       .post("/auth/signup", {
-  //         name: this.state.name,
-  //         password: this.state.password,
-  //         email: this.state.email,
-  //         role: this.state.role
-  //       })
-  //       //3.
-  //       .then(response => {
-  //         this.props.history.push("/");
+    //1.this is first send a data
+    axios
+      .post("/auth/signup", {
+        name: this.state.name,
+        password: this.state.password,
+        email: this.state.email,
+        role: this.state.role
+      })
+      //3.
+      .then(response => {
+        this.props.history.push("/");
 
+<<<<<<< HEAD
   //         this.props.setUser(response.data);
   //       })
   //       .catch(err => {
@@ -62,10 +63,14 @@ class Signup extends Component {
         //this.props.history.push("/");
 
         //this.props.setUser(this.response.data);
+=======
+        this.props.setUser(response.data);
+>>>>>>> f9f9160c96d05acf545ae18714417ef66412d9d4
       })
       .catch(err => {
         this.setState({
           message: err.response.data.message
+<<<<<<< HEAD
         });
       });
   };
@@ -80,6 +85,14 @@ class Signup extends Component {
     this.setState({ role: event.target.value });
   };
 >>>>>>> akua
+=======
+          /* setTimeout(() => {
+            this.props.history.push("/");
+          }, 3000); */
+        });
+      });
+  };
+>>>>>>> f9f9160c96d05acf545ae18714417ef66412d9d4
 
   render() {
     return (
