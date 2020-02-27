@@ -11,7 +11,7 @@ class Signup extends Component {
     role: ""
   };
 
-<<<<<<< HEAD
+
   handleChange = event => {
     this.setState({
       [event.target.name]: event.target.value
