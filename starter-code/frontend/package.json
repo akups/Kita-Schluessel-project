@@ -1,10 +1,6 @@
 {
   "name": "frontend",
-<<<<<<< HEAD
-  "proxy": "http://localhost:5557",
-=======
   "proxy": "http://localhost:5555",
->>>>>>> Laurel
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -7,38 +7,6 @@ class Signup extends Component {
     name: "",
     email: "",
     password: "",
-<<<<<<< HEAD
-
-    role: "parent"
-  };
-
-  // handleSubmit = event => {
-  //   event.preventDefault();
-
-  //1.this is first send a data
-  // axios
-  //   .post("/auth/signup", {
-  //     name: this.state.name,
-  //     password: this.state.password,
-  //     email: this.state.email,
-  //     role: this.state.role
-  //   })
-  //   //3.
-  //   .then(response => {
-  //     this.props.history.push("/");
-
-  //         this.props.setUser(response.data);
-  //       })
-  //       .catch(err => {
-  //         this.setState({
-  //           message: err.response.data.message
-  //           /* setTimeout(() => {
-  //           this.props.history.push("/");
-  //         }, 3000); */
-  //         });
-  //       });
-  //   };
-=======
     email: "",
     role: ""
   };
@@ -49,7 +17,6 @@ class Signup extends Component {
     });
   };
 
->>>>>>> Laurel
   handleSubmit = event => {
     event.preventDefault();
     console.log("eventtarget", this.state);
