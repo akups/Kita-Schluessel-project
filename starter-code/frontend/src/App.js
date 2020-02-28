@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import Navbar from "./components/Navbar.js";
 import Signup from "./components/Signup.js";
 import Login from "./components/Login.js";
+import Discover from "./components/Discover.js";
 
 class App extends React.Component {
   state = {
