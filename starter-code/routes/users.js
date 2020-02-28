@@ -8,21 +8,17 @@ const User = require("../models/User");
 
 router.post("/signup", (req, res) => {
   const { name, email, password, role } = req.body;
+  console.log(req.body);
 
   User.findOne({ email: email })
     .then(found => {
-<<<<<<< HEAD
+      //console.log("FOUND?", found);
+      if (found) {
+        return res.status(400).json({ message: "This email already exists" });
+      }
       console.log("FOUND?", found);
       if (found) {
         return res.status(400).json({ message: "This email already exists" });
-=======
-      // console.log("FOUND?", found);
-      if (found) {
-        HEAD;
-        return res.status(400).json({ message: "This email already exists" });
-
-        return res.status(400).json({ message: "This email already exist" });
->>>>>>> Laurel
       }
       return bcrypt
         .genSalt()
@@ -30,11 +26,7 @@ router.post("/signup", (req, res) => {
           return bcrypt.hash(password, salt);
         })
         .then(hash => {
-<<<<<<< HEAD
-          console.log(name, role, email, password);
-=======
-          // console.log(name, role, email, password);
->>>>>>> Laurel
+          //console.log(name, role, email, password);
           return User.create({
             name: name,
             role: role,
@@ -57,20 +49,23 @@ router.post("/signup", (req, res) => {
     });
 });
 
+//2)
 router.post("/login", (req, res, next) => {
+  //console.log("backenduser", req.body);
   passport.authenticate("local", (err, user, info) => {
-    if (err) {
+    //console.log("NO USER???????", user);
+    /* if (err) {
       return res.status(500).json({ message: "Error while authenticating" });
-    }
+    } */
     if (!user) {
-      // no user found with username or password didn't match
       return res.status(400).json({ message: info.message });
     }
-    // passport req.login
     req.login(user, err => {
+      //console.log("USER???????", user);
       if (err) {
         return res.status(500).json({ message: "Error while logging in" });
       }
+      //console.log("<WHERE IS A>", user);
       res.json(user);
     });
   })(req, res, next);
