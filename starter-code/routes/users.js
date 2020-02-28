@@ -4,22 +4,19 @@ const bcrypt = require("bcryptjs");
 const passport = require("passport");
 const User = require("../models/User");
 
-/* Here we'll write the routes dedicated to handle the user logic (auth) */
+//2.
 
 router.post("/signup", (req, res) => {
-  const { username, password } = req.body;
+  const { name, email, password, role } = req.body;
 
-  if (!username) {
-    return res.status(400).json({ message: "Username can't be empty" });
-  }
-  if (password.length < 8) {
-    return res.status(400).json({ message: "Password is too short" });
-  }
-
-  User.findOne({ username: username })
+  User.findOne({ email: email })
     .then(found => {
+      // console.log("FOUND?", found);
       if (found) {
-        return res.status(400).json({ message: "Username is already taken" });
+        HEAD;
+        return res.status(400).json({ message: "This email already exists" });
+
+        return res.status(400).json({ message: "This email already exist" });
       }
       return bcrypt
         .genSalt()
@@ -27,9 +24,16 @@ router.post("/signup", (req, res) => {
           return bcrypt.hash(password, salt);
         })
         .then(hash => {
-          return User.create({ username: username, password: hash });
+          // console.log(name, role, email, password);
+          return User.create({
+            name: name,
+            role: role,
+            email: email,
+            password: hash
+          });
         })
         .then(newUser => {
+          // console.log("HELLO", newUser);
           // passport login
           req.login(newUser, err => {
             if (err)
