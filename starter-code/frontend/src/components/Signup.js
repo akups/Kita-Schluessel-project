@@ -7,30 +7,52 @@ class Signup extends Component {
     name: "",
     email: "",
     password: "",
-    email: "",
-    role: ""
+
+    role: "parent"
   };
 
-  handleChange = event => {
-    this.setState({
-      [event.target.name]: event.target.value
-    });
-  };
+  // handleSubmit = event => {
+  //   event.preventDefault();
 
+  //1.this is first send a data
+  // axios
+  //   .post("/auth/signup", {
+  //     name: this.state.name,
+  //     password: this.state.password,
+  //     email: this.state.email,
+  //     role: this.state.role
+  //   })
+  //   //3.
+  //   .then(response => {
+  //     this.props.history.push("/");
+
+  //         this.props.setUser(response.data);
+  //       })
+  //       .catch(err => {
+  //         this.setState({
+  //           message: err.response.data.message
+  //           /* setTimeout(() => {
+  //           this.props.history.push("/");
+  //         }, 3000); */
+  //         });
+  //       });
+  //   };
   handleSubmit = event => {
     event.preventDefault();
+    console.log("eventtarget", this.state);
 
     //1.this is first send a data
     axios
-      .post("/auth/signup", {
+      .post("/api/auth/signup", {
         name: this.state.name,
+        email: this.state.email,
         password: this.state.password,
         email: this.state.email,
         role: this.state.role
       })
       //3.
       .then(response => {
-        this.props.history.push("/");
+        console.log("RSPONSE", response);
 
         //         this.props.setUser(response.data);
         //       })
@@ -85,6 +107,20 @@ class Signup extends Component {
       });
   };
 
+  setFormState = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+
+  onChange = event => {
+    this.setState({ role: event.target.value });
+  };
+
+  /* setTimeout(() => {
+            this.props.history.push("/");
+          }, 3000); */
+
   render() {
     return (
       <div>
@@ -96,7 +132,7 @@ class Signup extends Component {
               id="name"
               name="name"
               value={this.state.name}
-              onChange={this.handleChange}
+              onChange={this.setFormState}
             />
 
             <label htmlFor="">Password:</label>
@@ -105,7 +141,7 @@ class Signup extends Component {
               id="password"
               name="password"
               value={this.state.password}
-              onChange={this.handleChange}
+              onChange={this.setFormState}
             />
             <label htmlFor="email">email:</label>
             <input
@@ -113,7 +149,7 @@ class Signup extends Component {
               id="email"
               name="email"
               value={this.state.email}
-              onChange={this.handleChange}
+              onChange={this.setFormState}
             />
           </form>
         </div>
@@ -148,17 +184,17 @@ class Signup extends Component {
               name="role"
               id="role"
               value={this.state.role}
-              onChange={this.handleChange}
+              onChange={this.setFormState}
             >
               <option value="">Parent</option>
               <option value="">Government</option>
               <option value="">Owner</option>
 
-              <option
+              {/* <option
                 value={this.state.role}
                 onChange={this.onChange}
                 id="role"
-              />
+              /> */}
               <option>parent</option>
               <option>government</option>
               <option>owner</option>
