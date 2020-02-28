@@ -11,18 +11,9 @@ router.post("/signup", (req, res) => {
 
   User.findOne({ email: email })
     .then(found => {
-<<<<<<< HEAD
       console.log("FOUND?", found);
       if (found) {
         return res.status(400).json({ message: "This email already exists" });
-=======
-      // console.log("FOUND?", found);
-      if (found) {
-        HEAD;
-        return res.status(400).json({ message: "This email already exists" });
-
-        return res.status(400).json({ message: "This email already exist" });
->>>>>>> Laurel
       }
       return bcrypt
         .genSalt()

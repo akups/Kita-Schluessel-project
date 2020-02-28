@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import Navbar from "./components/Navbar.js";
 import Signup from "./components/Signup.js";
 import Login from "./components/Login.js";
+import Map from "./components/Map.js";
 
 class App extends React.Component {
   state = {
@@ -36,6 +37,7 @@ class App extends React.Component {
           )}
         />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/map" component={Map} />
       </div>
     );
   }
