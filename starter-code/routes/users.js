@@ -8,10 +8,15 @@ const User = require("../models/User");
 
 router.post("/signup", (req, res) => {
   const { name, email, password, role } = req.body;
+  console.log(req.body);
 
   User.findOne({ email: email })
     .then(found => {
       //console.log("FOUND?", found);
+      if (found) {
+        return res.status(400).json({ message: "This email already exists" });
+      }
+      console.log("FOUND?", found);
       if (found) {
         return res.status(400).json({ message: "This email already exists" });
       }
