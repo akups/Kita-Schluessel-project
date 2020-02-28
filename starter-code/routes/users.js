@@ -14,10 +14,14 @@ router.post("/signup", (req, res) => {
     .then(found => {
       console.log("FOUND?", found);
       if (found) {
+<<<<<<< HEAD
         HEAD;
         return res.status(400).json({ message: "This email already exists" });
 
         return res.status(400).json({ message: "This email already exist" });
+=======
+        return res.status(400).json({ message: "This email already exists" });
+>>>>>>> 76f8c74709ebce8146bfca66036716168c265d5e
       }
       return bcrypt
         .genSalt()
