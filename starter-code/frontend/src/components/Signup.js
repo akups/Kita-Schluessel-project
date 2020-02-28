@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-//import { Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import axios from "axios";
 
 class Signup extends Component {
@@ -7,39 +7,12 @@ class Signup extends Component {
     name: "",
     email: "",
     password: "",
-
-    role: "parent"
+    role: "parent",
+    redirect: false
   };
 
-  // handleSubmit = event => {
-  //   event.preventDefault();
-
-  //1.this is first send a data
-  // axios
-  //   .post("/auth/signup", {
-  //     name: this.state.name,
-  //     password: this.state.password,
-  //     email: this.state.email,
-  //     role: this.state.role
-  //   })
-  //   //3.
-  //   .then(response => {
-  //     this.props.history.push("/");
-
-  //         this.props.setUser(response.data);
-  //       })
-  //       .catch(err => {
-  //         this.setState({
-  //           message: err.response.data.message
-  //           /* setTimeout(() => {
-  //           this.props.history.push("/");
-  //         }, 3000); */
-  //         });
-  //       });
-  //   };
   handleSubmit = event => {
     event.preventDefault();
-    console.log("eventtarget", this.state);
 
     axios
       .post("/api/auth/signup", {
@@ -49,12 +22,16 @@ class Signup extends Component {
         role: this.state.role
       })
       .then(response => {
-        console.log("RSPONSE", response);
+        //console.log("RSPONSE", response);
 
         //this.props.history.push("/");
 
         //this.props.setUser(this.response.data);
+        this.setState({
+          redirect: true
+        });
         this.props.setUser(response.data);
+        this.props.history.push("/userportal");
       })
       .catch(err => {
         this.setState({
@@ -73,11 +50,10 @@ class Signup extends Component {
     this.setState({ role: event.target.value });
   };
 
-  /* setTimeout(() => {
-            this.props.history.push("/");
-          }, 3000); */
-
   render() {
+    if (this.state.redirect) {
+      return <Redirect to="/userportal" />;
+    }
     return (
       <div>
         <form>
@@ -129,6 +105,7 @@ class Signup extends Component {
             Submit
           </button>
         </form>
+        {this.state.message && <p>{this.state.message}</p>}
       </div>
     );
   }

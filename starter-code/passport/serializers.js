@@ -2,6 +2,7 @@ const passport = require("passport");
 const User = require("../models/User");
 
 passport.serializeUser((loggedInUser, cb) => {
+  console.log("<USERRRRRRR>", loggedInUser);
   cb(null, loggedInUser._id);
 });
 

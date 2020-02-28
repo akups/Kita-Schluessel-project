@@ -3,22 +3,26 @@ const LocalStrategy = require("passport-local").Strategy;
 const bcrypt = require("bcryptjs");
 const User = require("../models/User");
 
+//default is username and password. If we use email instead of username, we need to change default
 passport.use(
-  new LocalStrategy((username, password, cb) => {
-    User.findOne({ username: username })
-      .then(foundUser => {
-        if (!foundUser) {
-          return cb(null, false, { message: "Incorrect username." });
-        }
-        return bcrypt.compare(password, foundUser.password).then(match => {
-          if (!match) {
-            return cb(null, false, { message: "Incorrect password." });
+  new LocalStrategy(
+    { usernameField: "email", passwordField: "password" },
+    (email, password, cb) => {
+      User.findOne({ email: email })
+        .then(foundUser => {
+          if (!foundUser) {
+            return cb(null, false, { message: "Incorrect username." });
           }
-          cb(null, foundUser);
+          return bcrypt.compare(password, foundUser.password).then(match => {
+            if (!match) {
+              return cb(null, false, { message: "Incorrect password." });
+            }
+            cb(null, foundUser);
+          });
+        })
+        .catch(err => {
+          cb(err);
         });
-      })
-      .catch(err => {
-        cb(err);
-      });
-  })
+    }
+  )
 );

@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import Navbar from "./components/Navbar.js";
 import Signup from "./components/Signup.js";
 import Login from "./components/Login.js";
+import UserPortal from "./components/UserPortal";
 
 class App extends React.Component {
   state = {
@@ -22,7 +23,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Navbar />
+        <Navbar setUser={this.setUser} user={this.state.user} />
         <Route exact path="/" component={Home} />
         <Route
           exact
@@ -35,7 +36,18 @@ class App extends React.Component {
             />
           )}
         />
-        <Route exact path="/login" component={Login} />
+        <Route
+          exact
+          path="/login"
+          render={props => (
+            <Login history={props.history} setUser={this.setUser} />
+          )}
+        />
+        <Route
+          exact
+          path="/userportal"
+          render={props => <UserPortal {...props} user={this.state.user} />}
+        />
       </div>
     );
   }
