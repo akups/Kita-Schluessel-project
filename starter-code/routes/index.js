@@ -5,7 +5,7 @@ const usersRoutes = require("./users");
   res.send("This is home");
 }); */
 
-router.use("/auth", usersRoutes);
+router.use("/api/auth", usersRoutes);
 //router.use("/api", postsRoutes);
 
 module.exports = router;
