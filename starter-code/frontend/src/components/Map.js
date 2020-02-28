@@ -2,10 +2,6 @@ import React from "react";
 import { render } from "react-dom";
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 
-import React from "react";
-import { render } from "react-dom";
-import { Map, Marker, Popup, TileLayer } from "react-leaflet";
-
 const position = [53.57532, 10.01534];
 const map = (
   <Map center={position} zoom={13}>

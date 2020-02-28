@@ -11,7 +11,7 @@ import Login from "./components/Login.js";
 import UserPortal from "./components/UserPortal";
 
 import Discover from "./components/Discover.js";
-import Map from "./components/Map.js";
+// import Map from "./components/Map.js";
 
 class App extends React.Component {
   state = {
@@ -52,8 +52,6 @@ class App extends React.Component {
           path="/userportal"
           render={props => <UserPortal {...props} user={this.state.user} />}
         />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/map" component={Map} />
       </div>
     );
   }
