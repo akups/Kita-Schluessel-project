@@ -5,49 +5,129 @@ import axios from "axios";
 class Signup extends Component {
   state = {
     name: "",
+    email: "",
     password: "",
-    role: ""
+
+    role: "parent"
   };
 
+  // handleSubmit = event => {
+  //   event.preventDefault();
+
+  //1.this is first send a data
+  // axios
+  //   .post("/auth/signup", {
+  //     name: this.state.name,
+  //     password: this.state.password,
+  //     email: this.state.email,
+  //     role: this.state.role
+  //   })
+  //   //3.
+  //   .then(response => {
+  //     this.props.history.push("/");
+
+  //         this.props.setUser(response.data);
+  //       })
+  //       .catch(err => {
+  //         this.setState({
+  //           message: err.response.data.message
+  //           /* setTimeout(() => {
+  //           this.props.history.push("/");
+  //         }, 3000); */
+  //         });
+  //       });
+  //   };
   handleSubmit = event => {
     event.preventDefault();
+    console.log("eventtarget", this.state);
 
     axios
-      .post("/auth/signup", {
+      .post("/api/auth/signup", {
         name: this.state.name,
+        email: this.state.email,
         password: this.state.password,
         role: this.state.role
       })
       .then(response => {
-        this.props.history.push("/");
+        console.log("RSPONSE", response);
 
+        //this.props.history.push("/");
+
+        //this.props.setUser(this.response.data);
         this.props.setUser(response.data);
       })
       .catch(err => {
         this.setState({
           message: err.response.data.message
-          /* setTimeout(() => {
-          this.props.history.push("/");
-        }, 3000); */
         });
       });
   };
 
+  setFormState = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+
+  onChange = event => {
+    this.setState({ role: event.target.value });
+  };
+
+  /* setTimeout(() => {
+            this.props.history.push("/");
+          }, 3000); */
+
   render() {
     return (
       <div>
-        <form action="">
-          <label htmlFor="">Username:</label>
-          <input type="text" />
-          <label htmlFor="">Password:</label>
-          <input type="text" />
-          <label htmlFor="">Role:</label>
-          <select name="" id="">
-            <option value="">Parent</option>
+        <form>
+          <label htmlFor="name">Name:</label>
+          <input
+            name="name"
+            id="name"
+            value={this.state.name}
+            onChange={this.setFormState}
+            type="text"
+          />
+          <label htmlFor="email">Email:</label>
+          <input
+            name="email"
+            id="email"
+            type="text"
+            value={this.state.email}
+            onChange={this.setFormState}
+          />
+          <label htmlFor="password">Password:</label>
+          <input
+            type="text"
+            name="password"
+            id="password"
+            value={this.state.password}
+            onChange={this.setFormState}
+          />
+          <label htmlFor="role">Role:</label>
+          <select
+            name="role"
+            id="role"
+            value={this.state.role}
+            onChange={this.onChange}
+          >
+            {/* <option value="">Parent</option>
             <option value="">Government</option>
             <option value="">Owner</option>
+
+            <option
+              value={this.state.role}
+              onChange={this.onChange}
+              id="role"
+            /> */}
+            <option>parent</option>
+            <option>government</option>
+            <option>owner</option>
           </select>
-          <button onClick={this.handleSubmit}>Submit</button>
+          <button onClick={this.handleSubmit} type="submit">
+            Submit
+          </button>
         </form>
       </div>
     );
