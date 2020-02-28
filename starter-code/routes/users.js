@@ -8,6 +8,7 @@ const User = require("../models/User");
 
 router.post("/signup", (req, res) => {
   const { name, email, password, role } = req.body;
+  console.log(req.body);
 
   User.findOne({ email: email })
     .then(found => {
