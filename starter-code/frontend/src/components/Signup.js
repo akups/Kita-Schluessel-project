@@ -7,7 +7,6 @@ class Signup extends Component {
     name: "",
     email: "",
     password: "",
-<<<<<<< HEAD
 
     role: "parent"
   };
@@ -38,18 +37,6 @@ class Signup extends Component {
   //         });
   //       });
   //   };
-=======
-    email: "",
-    role: ""
-  };
-
-  handleChange = event => {
-    this.setState({
-      [event.target.name]: event.target.value
-    });
-  };
-
->>>>>>> Laurel
   handleSubmit = event => {
     event.preventDefault();
     console.log("eventtarget", this.state);
