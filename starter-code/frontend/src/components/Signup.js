@@ -92,7 +92,7 @@ class Signup extends Component {
         //         });
         //       });
         //   };
-        handleSubmit = event => {
+        this.handleSubmit = event => {
           event.preventDefault();
           console.log("eventtarget", this.state);
 
@@ -118,13 +118,13 @@ class Signup extends Component {
             });
         };
 
-        setFormState = event => {
+        this.setFormState = event => {
           this.setState({
             [event.target.name]: event.target.value
           });
         };
 
-        onChange = event => {
+        this.onChange = event => {
           this.setState({ role: event.target.value });
         };
 
