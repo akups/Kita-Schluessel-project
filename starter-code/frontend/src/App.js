@@ -4,6 +4,7 @@ import { Route } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home";
 import MapGL, { Source, Layer } from "react-map-gl";
+import Map from "./components/Map";
 // app.js
 import "mapbox-gl/dist/mapbox-gl.css";
 
@@ -55,6 +56,7 @@ class App extends React.Component {
           path="/userportal"
           render={props => <UserPortal {...props} user={this.state.user} />}
         />
+        <Route exact path="/map" component={Map} />
       </div>
     );
   }
