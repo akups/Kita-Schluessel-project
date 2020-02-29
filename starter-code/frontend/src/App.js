@@ -3,6 +3,9 @@ import React from "react";
 import { Route } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home";
+import MapGL, { Source, Layer } from "react-map-gl";
+// app.js
+import "mapbox-gl/dist/mapbox-gl.css";
 
 import Navbar from "./components/Navbar.js";
 import Signup from "./components/Signup.js";
@@ -36,6 +39,7 @@ class App extends React.Component {
           )}
         />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/map" component={Map} />
       </div>
     );
   }
