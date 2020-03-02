@@ -11,11 +11,12 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import Navbar from "./components/Navbar.js";
 import Signup from "./components/Signup.js";
 import Login from "./components/Login.js";
-
 import UserPortal from "./components/UserPortal";
+import Footer from "./components/Footer.js";
 
 import Discover from "./components/Discover.js";
 // import Map from "./components/Map.js";
+import Detail from "./components/Detail.js";
 
 class App extends React.Component {
   state = {
@@ -28,10 +29,22 @@ class App extends React.Component {
     });
   };
 
+  // Language Switcher
+  changeLang = () => {
+    const lang = localStorage.getItem("lang");
+    if (lang === "de") {
+      localStorage.setItem("lang", "en");
+    } else if (lang === "en") {
+      localStorage.setItem("lang", "de");
+    }
+    this.forceUpdate();
+  };
+
   render() {
     return (
       <div className="App">
         <Navbar setUser={this.setUser} user={this.state.user} />
+        <button onClick={this.changeLang}>Change Language</button>
         <Route exact path="/" component={Home} />
         <Route
           exact
@@ -57,6 +70,10 @@ class App extends React.Component {
           render={props => <UserPortal {...props} user={this.state.user} />}
         />
         <Route exact path="/map" component={Map} />
+        {/* <Route exact path="/map" component={Map} /> */}
+        <Route exact path="/discover" component={Discover} />
+        <Route exact path="/discover/:id" component={Detail} />
+        <Footer />
       </div>
     );
   }

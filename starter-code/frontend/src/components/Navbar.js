@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import navbarLocales from "../locales/locales.navbar.json";
 
 const Navbar = props => {
   const logout = () => {
@@ -9,12 +10,14 @@ const Navbar = props => {
     });
   };
 
+  const lang = localStorage.getItem("lang");
+
   if (props.user) {
     return (
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/data">Data&Satistics</Link>
-        <Link to="/map">Maps</Link>
+      <nav className="navilink">
+        <Link to="/">{navbarLocales.home[lang]}</Link>
+        <Link to="/data">{navbarLocales.data[lang]}</Link>
+        <Link to="/map">{navbarLocales.map[lang]}</Link>
         <Link onClick={logout} to="/">
           Logout
         </Link>
@@ -23,11 +26,11 @@ const Navbar = props => {
   }
   return (
     <nav>
-      <Link to="/">Home</Link>
-      <Link to="/data">Data&Satistics</Link>
-      <Link to="/map">Maps</Link>
-      <Link to="/login">Login</Link>
-      <Link to="/signup">Signup</Link>
+      <Link to="/">{navbarLocales.home[lang]}</Link>
+      <Link to="/data">{navbarLocales.data[lang]}</Link>
+      <Link to="/map">{navbarLocales.map[lang]}</Link>
+      <Link to="/login">{navbarLocales.login[lang]}</Link>
+      <Link to="/signup">{navbarLocales.signup[lang]}</Link>
     </nav>
   );
 };

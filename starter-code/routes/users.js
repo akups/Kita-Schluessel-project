@@ -16,10 +16,6 @@ router.post("/signup", (req, res) => {
       if (found) {
         return res.status(400).json({ message: "This email already exists" });
       }
-      console.log("FOUND?", found);
-      if (found) {
-        return res.status(400).json({ message: "This email already exists" });
-      }
       return bcrypt
         .genSalt()
         .then(salt => {

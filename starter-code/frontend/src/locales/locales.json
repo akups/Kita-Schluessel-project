@@ -1,0 +1,34 @@
+{
+  "navbar": {
+    "home": {
+      "en": "Home",
+      "de": "Startseite"
+    },
+    "login": {
+      "en": "Login",
+      "de": "Anmelden"
+    },
+    "signup": {
+      "en": "Sign Up",
+      "de": "Registrieren"
+    }
+  },
+  "data": {
+    "title": {
+      "en": "Why does this matter?",
+      "de": "Warum ist das wichtig?"
+    }
+  },
+  "map": {
+    "title": {
+      "en": "Map",
+      "de": "Karte"
+    }
+  },
+  "discover": {
+    "title": {
+      "en": "Discover",
+      "de": "Entdecke"
+    }
+  }
+}

@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,12 +35,72 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
+/* Nav bar */
 nav {
   display: flex;
   justify-content: space-evenly;
-  background-color: lawngreen;
+  background-color: #69c6ff;
+  height: 50px;
+  align-items: center;
+}
+
+a {
+  /* This is a link */
+  text-decoration: none;
+  color: #b571c7;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* home */
+
+.home-component img {
+  position: absolute;
+  width: 100%;
+  margin-left: -50%;
+}
+
+.text-component {
+  position: relative;
+  color: white;
+}
+
+.text-component h1 {
+  font-size: 50px;
+}
+
+.text-component p {
+  font-size: 30px;
+}
+
+/* .text-component button {
+} */
+
+.link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* Signup */
+.signup-componenet {
+  background-color: #3cf2efc0;
+  height: 800px;
+}
+
+/* Discover */
+table td th {
+  border: 2px #ff0000 solid;
+}
+
+/* Footer */
+.footer {
+  align-items: flex-end;
+  margin-top: 300px;
+  background-color: #3cf2ee;
   height: 50px;
 }
 

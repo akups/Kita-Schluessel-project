@@ -6,6 +6,11 @@ import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
 import axios from "axios";
 
+// Language Switcher Setup
+if (!localStorage.getItem("lang")) {
+  localStorage.setItem("lang", "de");
+}
+
 axios.get("/api/auth/loggedin").then(response => {
   ReactDOM.render(
     <BrowserRouter>
