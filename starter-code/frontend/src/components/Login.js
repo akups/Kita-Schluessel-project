@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
+import loginLocales from "../locales/locales.login.json";
 
 class Login extends Component {
   state = {
@@ -43,11 +44,15 @@ class Login extends Component {
   };
 
   render() {
+    const lang = localStorage.getItem("lang");
+
     if (this.state.redirect) {
       return <Redirect to="/userportal" />;
     }
     return (
       <div>
+        <h1>{loginLocales.title[lang]}</h1>
+        <p>{loginLocales.prompt[lang]}</p>
         <form>
           <label htmlFor="email">email:</label>
           <input

@@ -19,7 +19,7 @@ const Navbar = props => {
         <Link to="/data">{navbarLocales.data[lang]}</Link>
         <Link to="/map">{navbarLocales.map[lang]}</Link>
         <Link onClick={logout} to="/">
-          Logout
+          {navbarLocales.logout[lang]}
         </Link>
       </nav>
     );
