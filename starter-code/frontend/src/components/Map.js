@@ -1,6 +1,6 @@
-import React from "react";
-import { render } from "react-dom";
-import { Map, Marker, Popup, TileLayer } from "react-leaflet";
+// import React from "react";
+// import { render } from "react-dom";
+// import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 
 import React from "react";
 import { render } from "react-dom";
@@ -40,3 +40,4 @@ render(map, document.getElementById("map-container"));
 // var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?',
 // {attribution: 'Map Data &copy; <a href="https://www.openstreetmap.de/">OpenStreetMap</a>'})
 // .addTo(map);
+
