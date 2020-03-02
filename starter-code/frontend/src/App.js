@@ -11,12 +11,9 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import Navbar from "./components/Navbar.js";
 import Signup from "./components/Signup.js";
 import Login from "./components/Login.js";
-<<<<<<< HEAD
 import UserPortal from "./components/UserPortal";
 import Footer from "./components/Footer.js";
 
-=======
->>>>>>> Laurel
 import Discover from "./components/Discover.js";
 // import Map from "./components/Map.js";
 import Detail from "./components/Detail.js";
