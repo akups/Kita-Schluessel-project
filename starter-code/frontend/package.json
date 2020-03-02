@@ -10,7 +10,10 @@
     "axios": "^0.19.2",
     "json": "^9.0.6",
     "leaflet": "^1.6.0",
+<<<<<<< HEAD
     "locale": "^0.1.0",
+=======
+>>>>>>> 785934d8cd933eab1433ddcea0dbbd5bc40aedf7
     "mapbox": "^1.0.0-beta10",
     "react": "^16.13.0",
     "react-dom": "^16.12.0",
