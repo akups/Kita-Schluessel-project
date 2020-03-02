@@ -8,15 +8,17 @@ const Navbar = props => {
   const [img, setImage] = useState("/image/germany.png");
 
   const imageChange = () => {
-    //console.log("imagechange");
+    console.log("imagechange", localStorage.getItem("lang"));
     const lang = localStorage.getItem("lang");
-    if (img === "/image/uk.png" && lang === "en") {
+    console.log("LANG", lang);
+    if (lang === "en") {
       setImage("/image/germany.png");
       localStorage.setItem("lang", "de");
-    } else if (img === "/image/germany.png" && lang === "de") {
+    } else if (lang === "de") {
       setImage("/image/uk.png");
       localStorage.setItem("lang", "en");
     }
+    props.updatePage();
   };
 
   // const imageChange = () => {
@@ -29,7 +31,7 @@ const Navbar = props => {
   //   }
   // };
 
-  // const changeLang = () => {
+  // const imageChange = () => {
   //   console.log("Changing lang");
   //   const lang = localStorage.getItem("lang");
   //   if (lang === "de") {

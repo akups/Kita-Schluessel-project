@@ -29,23 +29,31 @@ class App extends React.Component {
     });
   };
 
-  //Language Switcher
-  changeLang = () => {
-    const lang = localStorage.getItem("lang");
-    if (lang === "de") {
-      localStorage.setItem("lang", "en");
-    } else if (lang === "en") {
-      localStorage.setItem("lang", "de");
-    }
+  updatePage = () => {
     this.forceUpdate();
   };
+
+  //Language Switcher
+  // changeLang = () => {
+  //   const lang = localStorage.getItem("lang");
+  //   if (lang === "de") {
+  //     localStorage.setItem("lang", "en");
+  //   } else if (lang === "en") {
+  //     localStorage.setItem("lang", "de");
+  //   }
+  //   this.forceUpdate();
+  // };
 
   render() {
     //console.log("APP", this.state.user);
     return (
       <div className="App">
-        <Navbar setUser={this.setUser} user={this.state.user} />
-        <button onClick={this.changeLang}>Change Language</button>
+        <Navbar
+          setUser={this.setUser}
+          user={this.state.user}
+          updatePage={this.updatePage}
+        />
+        {/* <button onClick={this.changeLang}>Change Language</button> */}
         <Route exact path="/" component={Home} />
         <Route
           exact
