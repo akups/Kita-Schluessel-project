@@ -11,15 +11,15 @@ const navStyle = {
 };
 
 const layers = [
-  "-430-0",
+  "-423-0",
   "0-100",
   "100-200",
   "200-300",
+  "300-400",
   "400-500",
   "500-600",
   "600-700",
   "700-800",
-  "800-900",
   "900-1109"
 ];
 const colors = [
@@ -38,13 +38,13 @@ const colors = [
 //   // the rest of the code will go in here
 // });
 
-export default class Map extends Component {
+export default class BerlinMap extends Component {
   constructor(props) {
     super(props);
     this.state = {
       viewport: {
-        latitude: 53.57532,
-        longitude: 10.01534,
+        latitude: 52.52008,
+        longitude: 13.40495,
         zoom: 9.5,
         bearing: 0,
         pitch: 0,
@@ -58,7 +58,7 @@ export default class Map extends Component {
     return (
       <MapGL
         {...viewport}
-        mapStyle="mapbox://styles/akup21/ck76k45rr172h1iqlrsb0ghyw" //mapbox://styles/
+        mapStyle="mapbox://styles/akup21/ck7an89si3ifj1iumt6579c0z"
         mapboxApiAccessToken={TOKEN}
       >
         <div className="nav" style={navStyle}>
@@ -66,7 +66,7 @@ export default class Map extends Component {
           <div>
             <div id="map"></div>
             <div class="map-overlay" id="features">
-              <h2>Hamburg Kitaplätze</h2>
+              <h2>Berlin Kitaplätze</h2>
               <div id="pd">
                 <p>Bewegun über Stadtteile!</p>
               </div>

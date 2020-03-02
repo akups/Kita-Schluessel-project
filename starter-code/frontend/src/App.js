@@ -4,7 +4,7 @@ import { Route } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home";
 import MapGL, { Source, Layer } from "react-map-gl";
-import Map from "./components/Map";
+
 // app.js
 import "mapbox-gl/dist/mapbox-gl.css";
 
@@ -17,6 +17,8 @@ import Footer from "./components/Footer.js";
 import Discover from "./components/Discover.js";
 // import Map from "./components/Map.js";
 import Detail from "./components/Detail.js";
+
+import DisplayMaps from "./components/DisplayMaps";
 
 class App extends React.Component {
   state = {
@@ -78,8 +80,7 @@ class App extends React.Component {
           path="/userportal"
           render={props => <UserPortal {...props} user={this.state.user} />}
         />
-        <Route exact path="/map" component={Map} />
-        {/* <Route exact path="/map" component={Map} /> */}
+        <Route exact path="/map" component={DisplayMaps} />
         <Route exact path="/discover" component={Discover} />
         <Route exact path="/discover/:id" component={Detail} />
         <Footer />
