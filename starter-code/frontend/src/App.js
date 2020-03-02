@@ -3,15 +3,19 @@ import React from "react";
 import { Route } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home";
+import MapGL, { Source, Layer } from "react-map-gl";
+import Map from "./components/Map";
+// app.js
+import "mapbox-gl/dist/mapbox-gl.css";
 
 import Navbar from "./components/Navbar.js";
 import Signup from "./components/Signup.js";
 import Login from "./components/Login.js";
-<<<<<<< HEAD
+import UserPortal from "./components/UserPortal";
+import Footer from "./components/Footer.js";
+
 import Discover from "./components/Discover.js";
-=======
-import Map from "./components/Map.js";
->>>>>>> 76f8c74709ebce8146bfca66036716168c265d5e
+// import Map from "./components/Map.js";
 
 class App extends React.Component {
   state = {
@@ -27,7 +31,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Navbar />
+        <Navbar setUser={this.setUser} user={this.state.user} />
         <Route exact path="/" component={Home} />
         <Route
           exact
@@ -40,8 +44,22 @@ class App extends React.Component {
             />
           )}
         />
-        <Route exact path="/login" component={Login} />
+        <Route
+          exact
+          path="/login"
+          render={props => (
+            <Login history={props.history} setUser={this.setUser} />
+          )}
+        />
+        <Route
+          exact
+          path="/userportal"
+          render={props => <UserPortal {...props} user={this.state.user} />}
+        />
         <Route exact path="/map" component={Map} />
+        {/* <Route exact path="/map" component={Map} /> */}
+        <Route exaxt path="/discover" component={Discover} />
+        <Footer />
       </div>
     );
   }
