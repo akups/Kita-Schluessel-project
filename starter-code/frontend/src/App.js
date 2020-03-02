@@ -29,7 +29,7 @@ class App extends React.Component {
     });
   };
 
-  // Language Switcher
+  //Language Switcher
   changeLang = () => {
     const lang = localStorage.getItem("lang");
     if (lang === "de") {
@@ -41,6 +41,7 @@ class App extends React.Component {
   };
 
   render() {
+    //console.log("APP", this.state.user);
     return (
       <div className="App">
         <Navbar setUser={this.setUser} user={this.state.user} />

@@ -56,13 +56,15 @@ class Discover extends React.Component {
 
     const Kitas = this.state.kitas.map(el => {
       return (
-        <tr>
-          <Link className="kita-container" to={`/discover/${el._id}`}>
-            <td>{el.name}</td>
-          </Link>
+        <tbody>
+          <tr key={el._id}>
+            <Link className="kita-container" to={`/discover/${el._id}`}>
+              <td>{el.name}</td>
+            </Link>
 
-          <td>{el.viertel}</td>
-        </tr>
+            <td>{el.viertel}</td>
+          </tr>
+        </tbody>
       );
     });
 
@@ -76,7 +78,7 @@ class Discover extends React.Component {
               <th>{discoverLocales.neighborhood[lang]}</th>
             </tr>
           </thead>
-          <tbody>{Kitas}</tbody>
+          {Kitas}
         </table>
       </div>
     );

@@ -74,6 +74,7 @@ router.delete("/logout", (req, res) => {
 });
 
 router.get("/loggedin", (req, res) => {
+  //console.log("USER LOGGED IN", req.user);
   res.json(req.user);
 });
 

@@ -14,7 +14,7 @@ if (!localStorage.getItem("lang")) {
 axios.get("/api/auth/loggedin").then(response => {
   ReactDOM.render(
     <BrowserRouter>
-      <App use={response.data} />
+      <App user={response.data} />
     </BrowserRouter>,
     document.getElementById("root")
   );

@@ -8,10 +8,10 @@ class UserPortal extends Component {
   };
 
   render() {
-    console.log("USER", this.props.user);
+    //console.log("USER", this.props.user);
     return (
       <div>
-        <h1>hello</h1>
+        <h1>hello, {this.props.user.name}</h1>
         <article>Check out what's new</article>
         <p></p>
         <Link to="/discover">
