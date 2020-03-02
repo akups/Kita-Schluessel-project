@@ -11,7 +11,7 @@ const Navbar = props => {
 
   if (props.user) {
     return (
-      <nav>
+      <nav className="navilink">
         <Link to="/">Home</Link>
         <Link to="/data">Data&Satistics</Link>
         <Link to="/map">Maps</Link>

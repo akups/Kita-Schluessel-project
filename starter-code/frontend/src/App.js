@@ -7,10 +7,10 @@ import Home from "./components/Home";
 import Navbar from "./components/Navbar.js";
 import Signup from "./components/Signup.js";
 import Login from "./components/Login.js";
-
 import UserPortal from "./components/UserPortal";
+import Footer from "./components/Footer.js";
 
-//import Discover from "./components/Discover.js";
+import Discover from "./components/Discover.js";
 // import Map from "./components/Map.js";
 
 class App extends React.Component {
@@ -52,6 +52,9 @@ class App extends React.Component {
           path="/userportal"
           render={props => <UserPortal {...props} user={this.state.user} />}
         />
+        {/* <Route exact path="/map" component={Map} /> */}
+        <Route exaxt path="/discover" component={Discover} />
+        <Footer />
       </div>
     );
   }

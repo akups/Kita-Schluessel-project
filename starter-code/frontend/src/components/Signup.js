@@ -55,7 +55,7 @@ class Signup extends Component {
       return <Redirect to="/userportal" />;
     }
     return (
-      <div>
+      <div className="signup-componenet">
         <form>
           <label htmlFor="name">Name:</label>
           <input
