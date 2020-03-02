@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Axios from "axios";
+import axios from "axios";
 
 class Discover extends Component {
   state = {
@@ -8,7 +8,7 @@ class Discover extends Component {
   };
 
   componentDidMount() {
-    Axios.get("https://localhost:27017/backend/kitas").then(response => {
+    axios.get("https://localhost:27017/backend").then(response => {
       console.log(response.data);
       this.setState({
         kitas: response.data
