@@ -1,0 +1,26 @@
+{
+  "home": {
+    "en": "Home",
+    "de": "Startseite"
+  },
+  "login": {
+    "en": "Login",
+    "de": "Anmelden"
+  },
+  "signup": {
+    "en": "Sign Up",
+    "de": "Registrieren"
+  },
+  "data": {
+    "en": "Why does this matter?",
+    "de": "Warum ist das wichtig?"
+  },
+  "map": {
+    "en": "View Map",
+    "de": "Karte anschauen"
+  },
+  "discover": {
+    "en": "Discover",
+    "de": "Entdecken"
+  }
+}

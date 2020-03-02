@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import discoverLocales from "../locales/locales.discover.json";
+
+const lang = localStorage.getItem("lang");
 
 class Discover extends Component {
   state = {
