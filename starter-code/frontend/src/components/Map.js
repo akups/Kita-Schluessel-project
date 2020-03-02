@@ -33,9 +33,9 @@ const colors = [
   "#050d00"
 ];
 
-Map.on("load", function() {
-  // the rest of the code will go in here
-});
+// Map.on("load", function() {
+//   // the rest of the code will go in here
+// });
 
 export default class Map extends Component {
   constructor(props) {
@@ -44,7 +44,7 @@ export default class Map extends Component {
       viewport: {
         latitude: 53.57532,
         longitude: 10.01534,
-        zoom: 10,
+        zoom: 9.5,
         bearing: 0,
         pitch: 0,
         width: 1000,
