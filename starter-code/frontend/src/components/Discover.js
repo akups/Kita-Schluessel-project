@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import discoverLocales from "../locales/locales.discover.json";
 
-const lang = localStorage.getItem("lang");
-
 class Discover extends React.Component {
   state = {
     kitas: []
@@ -21,6 +19,7 @@ class Discover extends React.Component {
   }
 
   render() {
+    const lang = localStorage.getItem("lang");
     // const kitaRow = () => {
     //   return (
     //     <tr>
@@ -69,12 +68,12 @@ class Discover extends React.Component {
 
     return (
       <div>
-        <h1>Discover</h1>
+        <h1>{discoverLocales.title[lang]}</h1>
         <table>
           <thead>
             <tr>
-              <th>name</th>
-              <th>viertel</th>
+              <th>Kita Name</th>
+              <th>{discoverLocales.neighborhood[lang]}</th>
             </tr>
           </thead>
           <tbody>{Kitas}</tbody>

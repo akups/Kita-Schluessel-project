@@ -1,6 +1,10 @@
 {
   "title": {
-    "en": "Disocver",
+    "en": "Discover",
     "de": "Entdecken"
+  },
+  "neighborhood": {
+    "en": "Neighborhood",
+    "de": "Viertel"
   }
 }

@@ -22,5 +22,9 @@
   "discover": {
     "en": "Discover",
     "de": "Entdecken"
+  },
+  "logout": {
+    "en": "Log Out",
+    "de": "Abmelden"
   }
 }
