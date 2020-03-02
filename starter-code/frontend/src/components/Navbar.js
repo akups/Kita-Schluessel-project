@@ -15,6 +15,7 @@ const Navbar = props => {
         <Link to="/">Home</Link>
         <Link to="/data">Data&Satistics</Link>
         <Link to="/map">Maps</Link>
+        <Link to="/userportal">UserPortal</Link>
         <Link onClick={logout} to="/">
           Logout
         </Link>

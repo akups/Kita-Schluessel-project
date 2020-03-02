@@ -16,6 +16,7 @@ import Footer from "./components/Footer.js";
 
 import Discover from "./components/Discover.js";
 // import Map from "./components/Map.js";
+import Detail from "./components/Detail.js";
 
 class App extends React.Component {
   state = {
@@ -58,7 +59,8 @@ class App extends React.Component {
         />
         <Route exact path="/map" component={Map} />
         {/* <Route exact path="/map" component={Map} /> */}
-        <Route exaxt path="/discover" component={Discover} />
+        <Route exact path="/discover" component={Discover} />
+        <Route exact path="/discover/:id" component={Detail} />
         <Footer />
       </div>
     );

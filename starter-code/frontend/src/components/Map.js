@@ -33,9 +33,9 @@ const colors = [
   "#050d00"
 ];
 
-Map.on("load", function() {
-  // the rest of the code will go in here
-});
+// Map.on("load", function() {
+//   // the rest of the code will go in here
+// });
 
 export default class Map extends Component {
   constructor(props) {
