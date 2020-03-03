@@ -109,7 +109,7 @@ export default class BerlinMap extends Component {
     const lang = localStorage.getItem("lang");
 
     return (
-      <MapGL
+      <MapGL>
         {...viewport}
         mapStyle="mapbox://styles/akup21/ck7an89si3ifj1iumt6579c0z"
         mapboxApiAccessToken={TOKEN}
