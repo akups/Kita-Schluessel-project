@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import MapGL, { NavigationControl } from "react-map-gl";
+import mapLocales from "../locales/locales.map.json";
 
 const TOKEN =
   "pk.eyJ1IjoiYWt1cDIxIiwiYSI6ImNrNzd0bzJ2cTA5MWgzbG55Z3oxeGEwcXEifQ._STj0U9zQNrv2I1Stwicig";
@@ -102,6 +103,8 @@ export default class BerlinMap extends Component {
 
   render() {
     const { viewport } = this.state;
+    const lang = localStorage.getItem("lang");
+
     return (
       <MapGL
         {...viewport}
@@ -113,24 +116,27 @@ export default class BerlinMap extends Component {
           <NavigationControl />
           <div>
             <div id="map"></div>
-            <div
-              class="map-overlay"
-              id="features"
-              style={{
-                display: "inline-block",
-                width: 150,
-                height: 150,
-                backgroundColor: "white",
-                border: 20
-              }}
-            >
-              <h2>Berlin Kitaplätze</h2>
-              <div id="pd">
-                <p>Bewegun über Stadtteile!</p>
+            <div class="map-overlay" id="features">
+              <h2>Berlin {mapLocales.kitas[lang]}</h2>
+              <div
+                class="map-overlay"
+                id="features"
+                style={{
+                  display: "inline-block",
+                  width: 150,
+                  height: 150,
+                  backgroundColor: "white",
+                  border: 20
+                }}
+              >
+                <h2>Berlin Kitaplätze</h2>
+                <div id="pd">
+                  <p>{mapLocales.move[lang]}</p>
+                </div>
               </div>
-            </div>
-            <div class="map-overlay" id="legend">
-              {this.drawLegends()}
+              <div class="map-overlay" id="legend">
+                {this.drawLegends()}
+              </div>
             </div>
           </div>
         </div>
