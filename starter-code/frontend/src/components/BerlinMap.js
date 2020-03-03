@@ -53,6 +53,7 @@ export default class BerlinMap extends Component {
       }
     };
   }
+
   render() {
     const { viewport } = this.state;
     return (
