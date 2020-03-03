@@ -1,6 +1,10 @@
 import React, { Component } from "react";
+<<<<<<< HEAD
 import MapGL, { NavigationControl } from "react-map-gl";
 import mapLocales from "../locales/locales.map.json";
+=======
+import MapGL, { Marker, Popup, NavigationControl } from "react-map-gl";
+>>>>>>> akua
 
 const TOKEN =
   "pk.eyJ1IjoiYWt1cDIxIiwiYSI6ImNrNzd0bzJ2cTA5MWgzbG55Z3oxeGEwcXEifQ._STj0U9zQNrv2I1Stwicig";
@@ -35,10 +39,6 @@ const colors = [
   "#050d00"
 ];
 
-// Map.on("load", function() {
-//   // the rest of the code will go in here
-// });
-
 export default class Map extends Component {
   constructor(props) {
     super(props);
@@ -51,8 +51,10 @@ export default class Map extends Component {
         pitch: 0,
         width: 1000,
         height: 800
-      }
+      },
+      popupInfo: null
     };
+    // this.renderPopup = this.renderPopup.bind(this);
   }
   render() {
     const { viewport } = this.state;
