@@ -67,7 +67,7 @@ const Navbar = props => {
     );
   }
   return (
-    <nav>
+    <nav className="navilink">
       <Link to="/">{navbarLocales.home[lang]}</Link>
       <Link to="/data">{navbarLocales.data[lang]}</Link>
       <Link to="/map">{navbarLocales.map[lang]}</Link>

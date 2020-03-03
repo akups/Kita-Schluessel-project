@@ -33,7 +33,7 @@ class Detail extends Component {
 
     console.log("DETAILS?", this.props.user);
     return (
-      <div>
+      <div className="detail-container">
         <img height="200px" width="200px" src="/image/kitaimage.png" alt="" />
         <h1>{this.state.kitas.name}</h1>
         <h3>{detailsLocales.address[lang]}</h3>

@@ -63,7 +63,7 @@ class Discover extends React.Component {
 
     const kita = filteredKitas.map(el => {
       return (
-        <tbody key={el._id}>
+        <tbody className="table" key={el._id}>
           <tr>
             <Link className="kita-container" to={`/discover/${el._id}`}>
               <td>{el.name}</td>
@@ -112,15 +112,11 @@ class Discover extends React.Component {
           <option value="Tempelhof-Schoeneberg">Tempelhof-Schoeneberg</option>
           <option value="Treptow-Koepenick">Treptow-Koepenick</option>
         </select>
-        <table>
+        <table className="table-container">
           <thead>
             <tr>
-              <th></th>
-              <th></th>
-            </tr>
-            <tr>
-              <th>Kita Name</th>
-              <th>{discoverLocales.neighborhood[lang]}</th>
+              <th width="50%">Kita Name</th>
+              <th width="50%">{discoverLocales.neighborhood[lang]}</th>
             </tr>
           </thead>
           {kita}
