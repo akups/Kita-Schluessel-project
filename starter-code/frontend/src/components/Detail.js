@@ -5,7 +5,7 @@ import detailsLocales from "../locales/locales.details.json";
 
 class Detail extends Component {
   state = {
-    kitas: []
+    kitas: false
   };
 
   componentDidMount() {
@@ -26,6 +26,10 @@ class Detail extends Component {
   render() {
     //console.log("FOUND?", this.state.kitas);
     const lang = localStorage.getItem("lang");
+
+    if (!this.state.kitas) {
+      return <h1>LOADING</h1>;
+    }
 
     console.log("DETAILS?", this.props.user);
     return (

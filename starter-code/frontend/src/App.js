@@ -86,9 +86,7 @@ class App extends React.Component {
         <Route
           exact
           path="/discover/:id"
-          setUser={this.setUser}
-          user={this.state.user}
-          component={Detail}
+          render={props => <Detail {...props} user={this.state.user} />}
         />
         <Footer />
       </div>

@@ -7,7 +7,7 @@ class Discover extends React.Component {
   state = {
     kitas: [],
     search: "",
-    select: "---",
+    select: "--",
     searchedKita: []
   };
 
@@ -37,10 +37,24 @@ class Discover extends React.Component {
     // //console.log(name);
   };
 
+  handleSelect = event => {
+    this.setState({ select: event.target.value });
+  };
+
   render() {
+    console.log(this.state.select);
+
     const search = this.state.search.toLowerCase();
     //const select = this.state.select;
-    const filteredKitas = this.state.kitas.filter(kita => {
+
+    const filteredKitasBySelect = this.state.kitas.filter(kita => {
+      if (this.state.select === "--") {
+        return true;
+      }
+      return kita.viertel === this.state.select;
+    });
+
+    const filteredKitas = filteredKitasBySelect.filter(kita => {
       return kita.name.toLowerCase().includes(search);
     });
     //console.log("<What's searched Kitas?>", filteredKitas);
@@ -49,8 +63,8 @@ class Discover extends React.Component {
 
     const kita = filteredKitas.map(el => {
       return (
-        <tbody>
-          <tr key={el._id}>
+        <tbody key={el._id}>
+          <tr>
             <Link className="kita-container" to={`/discover/${el._id}`}>
               <td>{el.name}</td>
             </Link>
@@ -78,21 +92,25 @@ class Discover extends React.Component {
           type="select"
           value={this.state.select}
           onChange={this.searchedName}
-          selected={this.state.select}
+          // selected={this.state.select}
         >
           <option value="--">select</option>
-          <option value="">Charlottenburg-Wilmersdorf</option>
-          <option value="">Friedrichshain-Kreuzberg</option>
-          <option value="">Lichtenberg</option>
-          <option value="">Marzahn-Hellersdorf</option>
-          <option value="">Mitte</option>
-          <option value="">Neukoelln</option>
-          <option value="">Pankow</option>
-          <option value="">Reinickendorf</option>
-          <option value="">Spandau</option>
-          <option value="">Steglitz-Zehlendorf</option>
-          <option value="">Tempelhof-Schoeneberg</option>
-          <option value="">Treptow-Koepenick</option>
+          <option value="Charlottenburg-Wilmersdorf">
+            Charlottenburg-Wilmersdorf
+          </option>
+          <option value="Friedrichshain-Kreuzberg">
+            Friedrichshain-Kreuzberg
+          </option>
+          <option value="Lichtenberg">Lichtenberg</option>
+          <option value="Marzahn-Hellersdorf">Marzahn-Hellersdorf</option>
+          <option value="Mitte">Mitte</option>
+          <option value="Neukoelln">Neukoelln</option>
+          <option value="Pankow">Pankow</option>
+          <option value="Reinickendorf">Reinickendorf</option>
+          <option value="Spandau">Spandau</option>
+          <option value="Steglitz-Zehlendorf">Steglitz-Zehlendorf</option>
+          <option value="Tempelhof-Schoeneberg">Tempelhof-Schoeneberg</option>
+          <option value="Treptow-Koepenick">Treptow-Koepenick</option>
         </select>
         <table>
           <thead>

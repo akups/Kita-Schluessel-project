@@ -12,10 +12,10 @@ const Navbar = props => {
     const lang = localStorage.getItem("lang");
     //console.log("LANG", lang);
     if (lang === "en") {
-      setImage("/image/germany.png");
+      setImage("/image/uk.png");
       localStorage.setItem("lang", "de");
     } else if (lang === "de") {
-      setImage("/image/uk.png");
+      setImage("/image/germany.png");
       localStorage.setItem("lang", "en");
     }
     props.updatePage();
@@ -73,6 +73,7 @@ const Navbar = props => {
       <Link to="/map">{navbarLocales.map[lang]}</Link>
       <Link to="/login">{navbarLocales.login[lang]}</Link>
       <Link to="/signup">{navbarLocales.signup[lang]}</Link>
+      <img onClick={imageChange} height="30px" src={img} alt="" />
     </nav>
   );
 };
