@@ -28,9 +28,9 @@ class Signup extends Component {
         //this.props.history.push("/");
 
         //this.props.setUser(this.response.data);
-        this.setState({
-          redirect: true
-        });
+        // this.setState({
+        //   redirect: true
+        // });
         this.props.setUser(response.data);
         this.props.history.push("/userportal");
       })
@@ -80,7 +80,7 @@ class Signup extends Component {
           />
           <label htmlFor="password">Password</label>
           <input
-            type="text"
+            type="password"
             name="password"
             id="password"
             value={this.state.password}

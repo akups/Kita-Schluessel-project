@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import MapGL, { NavigationControl } from "react-map-gl";
+import mapLocales from "../locales/locales.map.json";
 
 const TOKEN =
   "pk.eyJ1IjoiYWt1cDIxIiwiYSI6ImNrNzd0bzJ2cTA5MWgzbG55Z3oxeGEwcXEifQ._STj0U9zQNrv2I1Stwicig";
@@ -55,6 +56,8 @@ export default class Map extends Component {
   }
   render() {
     const { viewport } = this.state;
+    const lang = localStorage.getItem("lang");
+    console.log("lang", mapLocales, lang);
     return (
       <MapGL
         {...viewport}
@@ -66,9 +69,9 @@ export default class Map extends Component {
           <div>
             <div id="map"></div>
             <div class="map-overlay" id="features">
-              <h2>Hamburg Kitaplätze</h2>
+              <h2>Hamburg {mapLocales.kitas[lang]}</h2>
               <div id="pd">
-                <p>Bewegun über Stadtteile!</p>
+                <p>{mapLocales.move[lang]}</p>
               </div>
             </div>
             <div class="map-overlay" id="legend"></div>
