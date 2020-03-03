@@ -106,7 +106,7 @@ export default class BerlinMap extends Component {
     const lang = localStorage.getItem("lang");
 
     return (
-      <MapGL>
+      <MapGL
         {...viewport}
         mapStyle="mapbox://styles/akup21/ck7an89si3ifj1iumt6579c0z"
         mapboxApiAccessToken={TOKEN}
@@ -127,6 +127,8 @@ export default class BerlinMap extends Component {
                 border: 20
               }}
             >
+              <h2>Berlin {mapLocales.kitas[lang]}</h2>
+
               <h2>Berlin Kitaplätze</h2>
               <div id="pd">
                 <p>{mapLocales.move[lang]}</p>

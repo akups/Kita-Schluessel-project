@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+//import MapGL, { NavigationControl } from "react-map-gl";
+import mapLocales from "../locales/locales.map.json";
 import MapGL, { Marker, Popup, NavigationControl } from "react-map-gl";
 
 const TOKEN =
