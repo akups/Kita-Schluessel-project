@@ -7,7 +7,8 @@ const navStyle = {
   position: "absolute",
   top: 0,
   left: 0,
-  padding: "10px"
+  padding: "10px",
+  width: 30
 };
 
 const layers = [
@@ -23,15 +24,16 @@ const layers = [
   "900-1109"
 ];
 const colors = [
-  "#caefb8",
-  "#90bd73",
-  "#6ca745",
-  "#479117",
-  "#317a00",
-  "#276200",
-  "#143100",
-  "#1d4a00",
-  "#050d00"
+  "#daf5f4",
+  "#b5ecec",
+  "#89ecda",
+  "#40e0d0",
+  "#3acabb",
+  "#2d9d92",
+  "#007777",
+  "#005555",
+  "#003333",
+  "#000a0a"
 ];
 
 // Map.on("load", function() {
@@ -53,6 +55,51 @@ export default class BerlinMap extends Component {
       }
     };
   }
+
+  onloadMap = event => {
+    let legend;
+    for (let i = 0; i < layers.length; i++) {
+      var layer = layers[i];
+      var color = colors[i];
+      var item = document.createElement("div");
+      var key = document.createElement("span");
+      key.className = "legend-key";
+      key.style.backgroundColor = color;
+
+      var value = document.createElement("span");
+      value.innerHTML = layer;
+      item.appendChild(key);
+      item.appendChild(value);
+      legend.appendChild(item);
+    }
+  };
+
+  drawLegends = () => {
+    return layers.map((layer, i) => {
+      const color = colors[i];
+      return (
+        <div
+          style={{
+            backgroundColor: "white",
+            display: "flex",
+            justifyContent: "space-between",
+            width: 100
+          }}
+        >
+          <span
+            className="legend-key"
+            style={{
+              display: "inline-block",
+              width: "20px",
+              backgroundColor: color
+            }}
+          ></span>
+          <span>{layer}</span>
+        </div>
+      );
+    });
+  };
+
   render() {
     const { viewport } = this.state;
     return (
@@ -60,18 +107,31 @@ export default class BerlinMap extends Component {
         {...viewport}
         mapStyle="mapbox://styles/akup21/ck7an89si3ifj1iumt6579c0z"
         mapboxApiAccessToken={TOKEN}
+        onViewportChange={viewport => this.setState({ viewport })}
       >
         <div className="nav" style={navStyle}>
           <NavigationControl />
           <div>
             <div id="map"></div>
-            <div class="map-overlay" id="features">
+            <div
+              class="map-overlay"
+              id="features"
+              style={{
+                display: "inline-block",
+                width: 150,
+                height: 150,
+                backgroundColor: "white",
+                border: 20
+              }}
+            >
               <h2>Berlin Kitaplätze</h2>
               <div id="pd">
                 <p>Bewegun über Stadtteile!</p>
               </div>
             </div>
-            <div class="map-overlay" id="legend"></div>
+            <div class="map-overlay" id="legend">
+              {this.drawLegends()}
+            </div>
           </div>
         </div>
       </MapGL>
