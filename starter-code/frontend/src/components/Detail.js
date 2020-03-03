@@ -27,6 +27,7 @@ class Detail extends Component {
     //console.log("FOUND?", this.state.kitas);
     const lang = localStorage.getItem("lang");
 
+    console.log("DETAILS?", this.props.user);
     return (
       <div>
         <img height="200px" width="200px" src="/image/kitaimage.png" alt="" />

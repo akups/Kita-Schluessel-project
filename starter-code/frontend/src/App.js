@@ -54,6 +54,7 @@ class App extends React.Component {
           setUser={this.setUser}
           user={this.state.user}
           updatePage={this.updatePage}
+          //This means exporting "updatePage" to Navbar
         />
         {/* <button onClick={this.changeLang}>Change Language</button> */}
         <Route exact path="/" component={Home} />
@@ -82,7 +83,13 @@ class App extends React.Component {
         />
         <Route exact path="/map" component={DisplayMaps} />
         <Route exact path="/discover" component={Discover} />
-        <Route exact path="/discover/:id" component={Detail} />
+        <Route
+          exact
+          path="/discover/:id"
+          setUser={this.setUser}
+          user={this.state.user}
+          component={Detail}
+        />
         <Footer />
       </div>
     );
