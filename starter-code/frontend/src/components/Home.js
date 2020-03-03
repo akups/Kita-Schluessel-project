@@ -24,14 +24,15 @@ class Home extends Component {
         <div className="text-component">
           <h1>KitaSchlüssel</h1>
           <p>{homeLocales.selectcity[lang]}</p>
-          <button>Berlin</button>
-          <button>Hamburg</button>
+          <Link to="/map">
+            <button>See map</button>
+          </Link>
           <Link to="/signup">
             <button>{homeLocales.signup[lang]}</button>
           </Link>
           <p>
             <Link className="link" to="/login">
-             {homeLocales.login[lang]}
+              {homeLocales.login[lang]}
             </Link>
           </p>
         </div>

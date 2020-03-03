@@ -8,9 +8,9 @@ const Navbar = props => {
   const [img, setImage] = useState("/image/germany.png");
 
   const imageChange = () => {
-    console.log("imagechange", localStorage.getItem("lang"));
+    //console.log("imagechange", localStorage.getItem("lang"));
     const lang = localStorage.getItem("lang");
-    console.log("LANG", lang);
+    //console.log("LANG", lang);
     if (lang === "en") {
       setImage("/image/germany.png");
       localStorage.setItem("lang", "de");
@@ -19,6 +19,7 @@ const Navbar = props => {
       localStorage.setItem("lang", "en");
     }
     props.updatePage();
+    //This is coming from App.js
   };
 
   // const imageChange = () => {

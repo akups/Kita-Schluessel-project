@@ -24,6 +24,7 @@ class Detail extends Component {
 
   render() {
     //console.log("FOUND?", this.state.kitas);
+    console.log("DETAILS?", this.props.user);
     return (
       <div>
         <h1>Kita detail</h1>
