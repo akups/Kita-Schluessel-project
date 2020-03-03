@@ -1,10 +1,5 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
-import MapGL, { NavigationControl } from "react-map-gl";
-import mapLocales from "../locales/locales.map.json";
-=======
 import MapGL, { Marker, Popup, NavigationControl } from "react-map-gl";
->>>>>>> akua
 
 const TOKEN =
   "pk.eyJ1IjoiYWt1cDIxIiwiYSI6ImNrNzd0bzJ2cTA5MWgzbG55Z3oxeGEwcXEifQ._STj0U9zQNrv2I1Stwicig";
@@ -59,7 +54,7 @@ export default class Map extends Component {
   render() {
     const { viewport } = this.state;
     const lang = localStorage.getItem("lang");
-    console.log("lang", mapLocales, lang);
+    // console.log("lang", mapLocales, lang);
     return (
       <MapGL
         {...viewport}

@@ -57,8 +57,6 @@ export default class BerlinMap extends Component {
     };
   }
 
-<<<<<<< HEAD
-=======
   onloadMap = event => {
     let legend;
     for (let i = 0; i < layers.length; i++) {
@@ -103,7 +101,6 @@ export default class BerlinMap extends Component {
     });
   };
 
->>>>>>> akua
   render() {
     const { viewport } = this.state;
     const lang = localStorage.getItem("lang");
@@ -119,10 +116,6 @@ export default class BerlinMap extends Component {
           <NavigationControl />
           <div>
             <div id="map"></div>
-<<<<<<< HEAD
-            <div class="map-overlay" id="features">
-              <h2>Berlin {mapLocales.kitas[lang]}</h2>
-=======
             <div
               class="map-overlay"
               id="features"
@@ -135,7 +128,6 @@ export default class BerlinMap extends Component {
               }}
             >
               <h2>Berlin Kitaplätze</h2>
->>>>>>> akua
               <div id="pd">
                 <p>{mapLocales.move[lang]}</p>
               </div>
