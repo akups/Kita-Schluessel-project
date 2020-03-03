@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
-import MapGL, { NavigationControl } from "react-map-gl";
+//import MapGL, { NavigationControl } from "react-map-gl";
 import mapLocales from "../locales/locales.map.json";
-=======
 import MapGL, { Marker, Popup, NavigationControl } from "react-map-gl";
->>>>>>> akua
 
 const TOKEN =
   "pk.eyJ1IjoiYWt1cDIxIiwiYSI6ImNrNzd0bzJ2cTA5MWgzbG55Z3oxeGEwcXEifQ._STj0U9zQNrv2I1Stwicig";
