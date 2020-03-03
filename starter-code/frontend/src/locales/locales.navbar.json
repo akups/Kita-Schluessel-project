@@ -12,8 +12,8 @@
     "de": "Registrieren"
   },
   "data": {
-    "en": "Why does this matter?",
-    "de": "Warum ist das wichtig?"
+    "en": "The Problem",
+    "de": "Das Problem"
   },
   "map": {
     "en": "View Map",
@@ -22,5 +22,9 @@
   "discover": {
     "en": "Discover",
     "de": "Entdecken"
+  },
+  "logout": {
+    "en": "Log Out",
+    "de": "Abmelden"
   }
 }

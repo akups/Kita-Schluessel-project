@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import MapGL, { NavigationControl } from "react-map-gl";
+//import MapGL, { NavigationControl } from "react-map-gl";
 import mapLocales from "../locales/locales.map.json";
 import MapGL, { Marker, Popup, NavigationControl } from "react-map-gl";
 
@@ -56,7 +56,7 @@ export default class Map extends Component {
   render() {
     const { viewport } = this.state;
     const lang = localStorage.getItem("lang");
-    console.log("lang", mapLocales, lang);
+    // console.log("lang", mapLocales, lang);
     return (
       <MapGL
         {...viewport}

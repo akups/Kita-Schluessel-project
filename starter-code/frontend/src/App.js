@@ -31,22 +31,32 @@ class App extends React.Component {
     });
   };
 
-  // Language Switcher
-  changeLang = () => {
-    const lang = localStorage.getItem("lang");
-    if (lang === "de") {
-      localStorage.setItem("lang", "en");
-    } else if (lang === "en") {
-      localStorage.setItem("lang", "de");
-    }
+  updatePage = () => {
     this.forceUpdate();
   };
 
+  //Language Switcher
+  // changeLang = () => {
+  //   const lang = localStorage.getItem("lang");
+  //   if (lang === "de") {
+  //     localStorage.setItem("lang", "en");
+  //   } else if (lang === "en") {
+  //     localStorage.setItem("lang", "de");
+  //   }
+  //   this.forceUpdate();
+  // };
+
   render() {
+    //console.log("APP", this.state.user);
     return (
       <div className="App">
-        <Navbar setUser={this.setUser} user={this.state.user} />
-        <button onClick={this.changeLang}>Change Language</button>
+        <Navbar
+          setUser={this.setUser}
+          user={this.state.user}
+          updatePage={this.updatePage}
+          //This means exporting "updatePage" to Navbar
+        />
+        {/* <button onClick={this.changeLang}>Change Language</button> */}
         <Route exact path="/" component={Home} />
         <Route
           exact
@@ -73,7 +83,11 @@ class App extends React.Component {
         />
         <Route exact path="/map" component={DisplayMaps} />
         <Route exact path="/discover" component={Discover} />
-        <Route exact path="/discover/:id" component={Detail} />
+        <Route
+          exact
+          path="/discover/:id"
+          render={props => <Detail {...props} user={this.state.user} />}
+        />
         <Footer />
       </div>
     );

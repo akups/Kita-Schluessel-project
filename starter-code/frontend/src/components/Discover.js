@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import discoverLocales from "../locales/locales.discover.json";
 
-const lang = localStorage.getItem("lang");
-
 class Discover extends React.Component {
   state = {
-    kitas: []
+    kitas: [],
+    search: "",
+    select: "--",
+    searchedKita: []
   };
 
   //1. From frontend, axios request a kita data-> route kitas.js
@@ -20,64 +21,105 @@ class Discover extends React.Component {
     });
   }
 
+  searchedName = event => {
+    //console.log("<VALUE?>", event.target.value);
+    //console.log("<NAME?>", event.target.name);
+    this.setState({
+      [event.target.name]:
+        event.target.type === "select"
+          ? event.target.selected
+          : event.target.value
+    });
+
+    // //console.log(this.state.kitas);
+    // const name = event.target.name;
+    // const value = event.target.value;
+    // //console.log(name);
+  };
+
+  handleSelect = event => {
+    this.setState({ select: event.target.value });
+  };
+
   render() {
-    // const kitaRow = () => {
-    //   return (
-    //     <tr>
-    //       <td>{this.state.kitas.name}</td>
-    //       <td>{this.state.kitas.viertel}</td>
-    //     </tr>
-    //   );
-    // };
+    console.log(this.state.select);
 
-    // const kitaTable = () => {
-    //   return (
-    //     <table>
-    //       <thead>
-    //         <tr>
-    //           <th>Name</th>
-    //           <th>Viertel</th>
-    //         </tr>
-    //       </thead>
-    //       <tbody>
-    //         {this.state.kitas.map(el => {
-    //           return (
-    //             <Link className="kita-container" to={`/discover/${el._id}`}>
-    //               <tr>
-    //                 <td>{el.name}</td>
-    //                 <td>{el.viertel}</td>
-    //               </tr>
-    //             </Link>
-    //           );
-    //         })}
-    //       </tbody>
-    //     </table>
-    //   );
-    // };
+    const search = this.state.search.toLowerCase();
+    //const select = this.state.select;
 
-    const Kitas = this.state.kitas.map(el => {
+    const filteredKitasBySelect = this.state.kitas.filter(kita => {
+      if (this.state.select === "--") {
+        return true;
+      }
+      return kita.viertel === this.state.select;
+    });
+
+    const filteredKitas = filteredKitasBySelect.filter(kita => {
+      return kita.name.toLowerCase().includes(search);
+    });
+    //console.log("<What's searched Kitas?>", filteredKitas);
+    //console.log("<big kita>", Kitas);
+    const lang = localStorage.getItem("lang");
+
+    const kita = filteredKitas.map(el => {
       return (
-        <tr>
-          <Link className="kita-container" to={`/discover/${el._id}`}>
-            <td>{el.name}</td>
-          </Link>
+        <tbody className="table" key={el._id}>
+          <tr>
+            <Link className="kita-container" to={`/discover/${el._id}`}>
+              <td>{el.name}</td>
+            </Link>
 
-          <td>{el.viertel}</td>
-        </tr>
+            <td>{el.viertel}</td>
+          </tr>
+        </tbody>
       );
     });
 
     return (
       <div>
-        <h1>Discover</h1>
-        <table>
+        <h1>{discoverLocales.title[lang]}</h1>
+        <label htmlFor="searchbyname">Search Kita: </label>
+        <input
+          type="text"
+          name="search"
+          value={this.state.search}
+          onChange={this.searchedName}
+          placeholder="search by name"
+        />
+        <label htmlFor="filterbyviertel">Select: </label>
+        <select
+          name="select"
+          type="select"
+          value={this.state.select}
+          onChange={this.searchedName}
+          // selected={this.state.select}
+        >
+          <option value="--">select</option>
+          <option value="Charlottenburg-Wilmersdorf">
+            Charlottenburg-Wilmersdorf
+          </option>
+          <option value="Friedrichshain-Kreuzberg">
+            Friedrichshain-Kreuzberg
+          </option>
+          <option value="Lichtenberg">Lichtenberg</option>
+          <option value="Marzahn-Hellersdorf">Marzahn-Hellersdorf</option>
+          <option value="Mitte">Mitte</option>
+          <option value="Neukoelln">Neukoelln</option>
+          <option value="Pankow">Pankow</option>
+          <option value="Reinickendorf">Reinickendorf</option>
+          <option value="Spandau">Spandau</option>
+          <option value="Steglitz-Zehlendorf">Steglitz-Zehlendorf</option>
+          <option value="Tempelhof-Schoeneberg">Tempelhof-Schoeneberg</option>
+          <option value="Treptow-Koepenick">Treptow-Koepenick</option>
+        </select>
+        <table className="table-container">
           <thead>
             <tr>
-              <th>name</th>
-              <th>viertel</th>
+              <th width="50%">Kita Name</th>
+              <th width="50%">{discoverLocales.neighborhood[lang]}</th>
             </tr>
           </thead>
-          <tbody>{Kitas}</tbody>
+          {kita}
         </table>
       </div>
     );

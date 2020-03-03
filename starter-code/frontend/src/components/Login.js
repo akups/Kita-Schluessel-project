@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
+import loginLocales from "../locales/locales.login.json";
 
 class Login extends Component {
   state = {
     email: "",
-    password: "",
+    password: ""
 
-    redirect: false
+    // redirect: false
   };
 
   handleSubmit = event => {
@@ -22,17 +23,18 @@ class Login extends Component {
       //3)
       .then(response => {
         //console.log("loginuser", response.data);
-        this.setState({
-          redirect: true
-        });
-        this.props.history.push("userportal");
+        // this.setState({
+        //   redirect: false
+        // });
         this.props.setUser(response.data);
+        this.props.history.push("userportal");
       })
       .catch(err => {
+        console.log(err);
         //console.log(err.response.data.message);
-        this.setState({
-          message: err.response.data.message
-        });
+        // this.setState({
+        //   message: err.response.data.message
+        // });
       });
   };
 
@@ -43,11 +45,15 @@ class Login extends Component {
   };
 
   render() {
-    if (this.state.redirect) {
-      return <Redirect to="/userportal" />;
-    }
+    const lang = localStorage.getItem("lang");
+
+    // if (this.state.redirect) {
+    //   return <Redirect to="/userportal" />;
+    // }
     return (
       <div>
+        <h1>{loginLocales.title[lang]}</h1>
+        <p>{loginLocales.prompt[lang]}</p>
         <form>
           <label htmlFor="email">email:</label>
           <input
@@ -59,7 +65,7 @@ class Login extends Component {
           />
           <label htmlFor="password">Password:</label>
           <input
-            type="text"
+            type="password"
             name="password"
             id="password"
             value={this.state.password}

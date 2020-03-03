@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
+import signupLocales from "../locales/locales.signup.json";
 
 class Signup extends Component {
   state = {
@@ -27,9 +28,9 @@ class Signup extends Component {
         //this.props.history.push("/");
 
         //this.props.setUser(this.response.data);
-        this.setState({
-          redirect: true
-        });
+        // this.setState({
+        //   redirect: true
+        // });
         this.props.setUser(response.data);
         this.props.history.push("/userportal");
       })
@@ -51,13 +52,17 @@ class Signup extends Component {
   };
 
   render() {
+    const lang = localStorage.getItem("lang");
+
     if (this.state.redirect) {
       return <Redirect to="/userportal" />;
     }
     return (
       <div className="signup-componenet">
+        <h1>{signupLocales.title[lang]}</h1>
+        <p>{signupLocales.welcome[lang]}</p>
         <form>
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name">Name</label>
           <input
             name="name"
             id="name"
@@ -65,7 +70,7 @@ class Signup extends Component {
             onChange={this.setFormState}
             type="text"
           />
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email">Email Address</label>
           <input
             name="email"
             id="email"
@@ -73,15 +78,15 @@ class Signup extends Component {
             value={this.state.email}
             onChange={this.setFormState}
           />
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="password">Password</label>
           <input
-            type="text"
+            type="password"
             name="password"
             id="password"
             value={this.state.password}
             onChange={this.setFormState}
           />
-          <label htmlFor="role">Role:</label>
+          <label htmlFor="role">Role</label>
           <select
             name="role"
             id="role"

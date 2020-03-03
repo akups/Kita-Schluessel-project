@@ -116,27 +116,26 @@ export default class BerlinMap extends Component {
           <NavigationControl />
           <div>
             <div id="map"></div>
-            <div class="map-overlay" id="features">
+            <div
+              class="map-overlay"
+              id="features"
+              style={{
+                display: "inline-block",
+                width: 150,
+                height: 150,
+                backgroundColor: "white",
+                border: 20
+              }}
+            >
               <h2>Berlin {mapLocales.kitas[lang]}</h2>
-              <div
-                class="map-overlay"
-                id="features"
-                style={{
-                  display: "inline-block",
-                  width: 150,
-                  height: 150,
-                  backgroundColor: "white",
-                  border: 20
-                }}
-              >
-                <h2>Berlin Kitaplätze</h2>
-                <div id="pd">
-                  <p>{mapLocales.move[lang]}</p>
-                </div>
+
+              <h2>Berlin Kitaplätze</h2>
+              <div id="pd">
+                <p>{mapLocales.move[lang]}</p>
               </div>
-              <div class="map-overlay" id="legend">
-                {this.drawLegends()}
-              </div>
+            </div>
+            <div class="map-overlay" id="legend">
+              {this.drawLegends()}
             </div>
           </div>
         </div>

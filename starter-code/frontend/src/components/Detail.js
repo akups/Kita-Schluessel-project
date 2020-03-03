@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import detailsLocales from "../locales/locales.details.json";
 
 class Detail extends Component {
   state = {
-    kitas: []
+    kitas: false
   };
 
   componentDidMount() {
@@ -23,15 +24,39 @@ class Detail extends Component {
   }
 
   render() {
-    console.log("FOUND?", this.state.kitas);
+    //console.log("FOUND?", this.state.kitas);
+    const lang = localStorage.getItem("lang");
+
+    if (!this.state.kitas) {
+      return <h1>LOADING</h1>;
+    }
+
+    console.log("DETAILS?", this.props.user);
     return (
-      <div>
-        <h1>Kita detail</h1>
+      <div className="detail-container">
         <img height="200px" width="200px" src="/image/kitaimage.png" alt="" />
-        <h2>{this.state.kitas.name}</h2>
+        <h1>{this.state.kitas.name}</h1>
+        <h3>{detailsLocales.address[lang]}</h3>
         <p>{this.state.kitas.adresse}</p>
+        <h3>{detailsLocales.postcode[lang]}:</h3>
+        <p>{this.state.kitas.postleitzahl}</p>
+        <h3>{detailsLocales.city[lang]}</h3>
+        <p>{this.state.kitas.stadt}</p>
+        <h3>{detailsLocales.phone[lang]}</h3>
+        <p>
+          <a href={"tel:" + this.state.kitas.telefon}>
+            {this.state.kitas.telefon}
+          </a>
+        </p>
+        <h3>{detailsLocales.email[lang]}</h3>
+        <p>
+          <a href={"mailto:" + this.state.kitas.email}>
+            {this.state.kitas.email}
+          </a>
+        </p>
+
         <Link to="/discover">
-          <button>go back to discover</button>
+          <button>{detailsLocales.return[lang]}</button>
         </Link>
       </div>
     );

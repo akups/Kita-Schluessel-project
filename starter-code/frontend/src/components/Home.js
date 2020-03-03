@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Component } from "react";
+import homeLocales from "../locales/locales.home.json";
 
 class Home extends Component {
   /* select = () => {
@@ -14,6 +15,7 @@ class Home extends Component {
   }; */
 
   render() {
+    const lang = localStorage.getItem("lang");
     return (
       <div className="home-component">
         <div className="img-component">
@@ -21,20 +23,16 @@ class Home extends Component {
         </div>
         <div className="text-component">
           <h1>KitaSchlüssel</h1>
-          <p>Wählen Sie Ihre Stadt</p>
-          <select name="linkselect" className="city-selector">
-            <option value="null">Please select</option>
-
-            <option value="/map">Berlin</option>
-
-            <option value="/map">Hamburg</option>
-          </select>
+          <p>{homeLocales.selectcity[lang]}</p>
+          <Link to="/map">
+            <button>See map</button>
+          </Link>
           <Link to="/signup">
-            <button>Konto Erstellen</button>
+            <button>{homeLocales.signup[lang]}</button>
           </Link>
           <p>
             <Link className="link" to="/login">
-              Haben Sie bereits ein Konto? Loggen Sie sich ein.
+              {homeLocales.login[lang]}
             </Link>
           </p>
         </div>
