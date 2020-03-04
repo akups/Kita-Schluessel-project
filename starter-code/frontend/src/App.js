@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home";
 import MapGL, { Source, Layer } from "react-map-gl";
@@ -13,13 +13,14 @@ import Signup from "./components/Signup.js";
 import Login from "./components/Login.js";
 import UserPortal from "./components/UserPortal";
 import Footer from "./components/Footer.js";
-
+import DiscoverHamburg from "./components/DiscoverHamburg";
 import Discover from "./components/Discover.js";
 // import Map from "./components/Map.js";
 import Detail from "./components/Detail.js";
 
 import DisplayMaps from "./components/DisplayMaps";
 import AddKita from "./components/AddKita";
+// import DisplayKitas from "./components/DisplayKitas";
 
 class App extends React.Component {
   state = {
@@ -88,6 +89,8 @@ class App extends React.Component {
           path="/discover"
           render={props => <Discover {...props} user={this.state.user} />}
         />
+        {/* <Route exact path="/discover" component={Discover} /> */}
+        <Route exact path="/discover/hamburg" component={DiscoverHamburg} />
         <Route
           exact
           path="/discover/:id"

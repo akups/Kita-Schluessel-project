@@ -7,7 +7,7 @@ export default class DisplayMaps extends Component {
     displayBerlin: true
   };
 
-  handlehangeMap = event => {
+  handlechangeMap = event => {
     event.preventDefault();
     this.setState({
       displayBerlin: !this.state.displayBerlin
@@ -17,7 +17,7 @@ export default class DisplayMaps extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.handlehangeMap}>
+        <button onClick={this.handlechangeMap}>
           {this.state.displayBerlin ? "Hamburg" : "Berlin"}
         </button>
         {this.state.displayBerlin ? <BerlinMap /> : <Map />}
