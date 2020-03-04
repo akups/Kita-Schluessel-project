@@ -71,7 +71,7 @@ const Navbar = props => {
           </Link>
           <img onClick={imageChange} height="30px" src={img} alt="" />
           <Link to="/userportal">
-            <img height="30px" src="/image/user.png" alt="" />
+            <img height="30px" src="/image/user.png" alt="User Portal" />
           </Link>
         </div>
       </nav>
@@ -80,7 +80,11 @@ const Navbar = props => {
   return (
     <nav className="navilink">
       <Link className="logo-link" to="/">
-        <img src="/image/Logo.png" alt="Kita Schlüssel Logo"></img>
+        <img
+          src="/image/Logo.png"
+          alt="Kita Schlüssel Logo"
+          height="85px"
+        ></img>
       </Link>
       <div className="main-nav">
         <Link to="/data">{navbarLocales.data[lang]}</Link>
