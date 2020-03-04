@@ -122,12 +122,12 @@ export default class BerlinMap extends Component {
               style={{
                 display: "inline-block",
                 width: 150,
-                height: 150,
+                height: 100,
                 backgroundColor: "white",
                 border: 20
               }}
             >
-              <h2>Berlin {mapLocales.kitas[lang]}</h2>
+              {/* <h2>Berlin {mapLocales.kitas[lang]}</h2> */}
 
               <h2>Berlin Kitaplätze</h2>
               <div id="pd">
