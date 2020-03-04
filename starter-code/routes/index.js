@@ -9,6 +9,7 @@ const kitaRoute = require("./kitas");
 //To connect frontend and backend, we need to make a route first
 router.use("/api/auth", usersRoutes);
 router.use("/api", kitaRoute);
+
 //router.use("/api", postsRoutes);
 
 module.exports = router;
