@@ -1,0 +1,18 @@
+{
+  "view": {
+    "en": "View Map",
+    "de": "Karte Anschauen"
+  },
+  "signup": {
+    "en": "Create Account",
+    "de": "Konto Erstellen"
+  },
+  "login": {
+    "en": "Do you already have an account? Click here to log in.",
+    "de": "Haben Sie bereits ein Konto? Loggen Sie sich ein."
+  },
+  "connect": {
+    "en": "Connect with open kita spots in your city!",
+    "de": "Verbinden Sie sich mit offenen Kita-Spots in Ihrer Stadt!"
+  }
+}

@@ -18,7 +18,8 @@ const kitaSchema = new Schema({
   webAddress: String,
   specials: String,
   educationalFocus: String,
-  thematicFocus: String
+  thematicFocus: String,
+  district: String
 });
 
 const Kita = mongoose.model("Kita", kitaSchema);

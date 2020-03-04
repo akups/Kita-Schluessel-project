@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home";
 import MapGL, { Source, Layer } from "react-map-gl";
@@ -13,12 +13,14 @@ import Signup from "./components/Signup.js";
 import Login from "./components/Login.js";
 import UserPortal from "./components/UserPortal";
 import Footer from "./components/Footer.js";
-
+import DiscoverHamburg from "./components/DiscoverHamburg";
 import Discover from "./components/Discover.js";
 // import Map from "./components/Map.js";
 import Detail from "./components/Detail.js";
 
 import DisplayMaps from "./components/DisplayMaps";
+import AddKita from "./components/AddKita";
+// import DisplayKitas from "./components/DisplayKitas";
 
 class App extends React.Component {
   state = {
@@ -31,22 +33,32 @@ class App extends React.Component {
     });
   };
 
-  // Language Switcher
-  changeLang = () => {
-    const lang = localStorage.getItem("lang");
-    if (lang === "de") {
-      localStorage.setItem("lang", "en");
-    } else if (lang === "en") {
-      localStorage.setItem("lang", "de");
-    }
+  updatePage = () => {
     this.forceUpdate();
   };
 
+  //Language Switcher
+  // changeLang = () => {
+  //   const lang = localStorage.getItem("lang");
+  //   if (lang === "de") {
+  //     localStorage.setItem("lang", "en");
+  //   } else if (lang === "en") {
+  //     localStorage.setItem("lang", "de");
+  //   }
+  //   this.forceUpdate();
+  // };
+
   render() {
+    //console.log("APP", this.state.user);
     return (
       <div className="App">
-        <Navbar setUser={this.setUser} user={this.state.user} />
-        <button onClick={this.changeLang}>Change Language</button>
+        <Navbar
+          setUser={this.setUser}
+          user={this.state.user}
+          updatePage={this.updatePage}
+          //This means exporting "updatePage" to Navbar
+        />
+        {/* <button onClick={this.changeLang}>Change Language</button> */}
         <Route exact path="/" component={Home} />
         <Route
           exact
@@ -72,8 +84,19 @@ class App extends React.Component {
           render={props => <UserPortal {...props} user={this.state.user} />}
         />
         <Route exact path="/map" component={DisplayMaps} />
-        <Route exact path="/discover" component={Discover} />
-        <Route exact path="/discover/:id" component={Detail} />
+        <Route
+          exact
+          path="/discover"
+          render={props => <Discover {...props} user={this.state.user} />}
+        />
+        {/* <Route exact path="/discover" component={Discover} /> */}
+        <Route exact path="/discover/hamburg" component={DiscoverHamburg} />
+        <Route
+          exact
+          path="/discover/:id"
+          render={props => <Detail {...props} user={this.state.user} />}
+        />
+        <Route exact path="/addkita" component={AddKita} />
         <Footer />
       </div>
     );

@@ -2,5 +2,13 @@
   "title": {
     "en": "Map",
     "de": "Karte"
+  },
+  "kitas": {
+    "en": "Kita Spots",
+    "de": "Kitaplätze"
+  },
+  "move": {
+    "en": "Hover over the neighborhoods!",
+    "de": "Bewegun über Stadtteile!"
   }
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Component } from "react";
+import homeLocales from "../locales/locales.home.json";
 
 class Home extends Component {
   /* select = () => {
@@ -14,31 +15,27 @@ class Home extends Component {
   }; */
 
   render() {
+    const lang = localStorage.getItem("lang");
     return (
       <div className="home-component">
-        <div className="img-component">
-          <img src="image/photo-1540479859555-17af45c78602.jpeg" alt="" />
-        </div>
-        <div className="text-component">
           <h1>KitaSchlüssel</h1>
-          <p>Wählen Sie Ihre Stadt</p>
-          <select name="linkselect" className="city-selector">
-            <option value="null">Please select</option>
-
-            <option value="/map">Berlin</option>
-
-            <option value="/map">Hamburg</option>
-          </select>
-          <Link to="/signup">
-            <button>Konto Erstellen</button>
-          </Link>
+          <p>{homeLocales.connect[lang]}</p>
+          <div className="home-buttons">
+            <Link to="/map">
+              <button className="home-map">{homeLocales.view[lang]}</button>
+            </Link>
+            <Link to="/signup">
+              <button className="home-signup">
+                {homeLocales.signup[lang]}
+              </button>
+            </Link>
+          </div>
           <p>
-            <Link className="link" to="/login">
-              Haben Sie bereits ein Konto? Loggen Sie sich ein.
+            <Link className="login-link" to="/login">
+              {homeLocales.login[lang]}
             </Link>
           </p>
         </div>
-      </div>
     );
   }
 }
