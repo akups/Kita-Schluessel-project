@@ -53,27 +53,50 @@ const Navbar = props => {
   if (props.user) {
     return (
       <nav className="navilink">
-        <Link to="/">{navbarLocales.home[lang]}</Link>
-        <Link to="/data">{navbarLocales.data[lang]}</Link>
-        <Link to="/map">{navbarLocales.map[lang]}</Link>
-        <Link onClick={logout} to="/">
-          {navbarLocales.logout[lang]}
+        <Link className="logo-link" to="/">
+          <img
+            src="/image/Logo.png"
+            alt="Kita Schlüssel Logo"
+            height="85px"
+          ></img>
         </Link>
-        <img onClick={imageChange} height="30px" src={img} alt="" />
-        <Link to="/userportal">
-          <img height="30px" src="/image/user.png" alt="" />
-        </Link>
+        <div className="main-nav">
+          <Link to="/data">{navbarLocales.data[lang]}</Link>
+          <Link to="/map">{navbarLocales.map[lang]}</Link>
+          <Link to="/discover">{navbarLocales.discover[lang]}</Link>
+        </div>
+        <div className="login-nav">
+          <Link onClick={logout} to="/">
+            {navbarLocales.logout[lang]}
+          </Link>
+          <img onClick={imageChange} height="30px" src={img} alt="" />
+          <Link to="/userportal">
+            <img height="30px" src="/image/user.png" alt="" />
+          </Link>
+        </div>
       </nav>
     );
   }
   return (
     <nav className="navilink">
-      <Link to="/">{navbarLocales.home[lang]}</Link>
-      <Link to="/data">{navbarLocales.data[lang]}</Link>
-      <Link to="/map">{navbarLocales.map[lang]}</Link>
-      <Link to="/login">{navbarLocales.login[lang]}</Link>
-      <Link to="/signup">{navbarLocales.signup[lang]}</Link>
-      <img onClick={imageChange} height="30px" src={img} alt="" />
+      <Link className="logo-link" to="/">
+        <img src="/image/Logo.png" alt="Kita Schlüssel Logo"></img>
+      </Link>
+      <div className="main-nav">
+        <Link to="/data">{navbarLocales.data[lang]}</Link>
+        <Link to="/map">{navbarLocales.map[lang]}</Link>
+        <Link to="/discover">{navbarLocales.discover[lang]}</Link>
+      </div>
+      <div className="login-nav">
+        <Link to="/login">{navbarLocales.login[lang]}</Link>
+        <Link to="/signup">{navbarLocales.signup[lang]}</Link>
+        <img
+          onClick={imageChange}
+          height="30px"
+          src={img}
+          alt="Language Switcher"
+        />
+      </div>
     </nav>
   );
 };

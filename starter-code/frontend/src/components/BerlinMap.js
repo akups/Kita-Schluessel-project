@@ -129,7 +129,7 @@ export default class BerlinMap extends Component {
             >
               <h2>Berlin {mapLocales.kitas[lang]}</h2>
 
-              <h2>Berlin Kitaplätze</h2>
+              {/* <h2>Berlin Kitaplätze</h2> */}
               <div id="pd">
                 <p>{mapLocales.move[lang]}</p>
               </div>
