@@ -18,25 +18,24 @@ class Home extends Component {
     const lang = localStorage.getItem("lang");
     return (
       <div className="home-component">
-        <div className="img-component">
-          <img src="image/photo-1540479859555-17af45c78602.jpeg" alt="" />
-        </div>
-        <div className="text-component">
           <h1>KitaSchlüssel</h1>
-          <p>{homeLocales.selectcity[lang]}</p>
-          <Link to="/map">
-            <button>See map</button>
-          </Link>
-          <Link to="/signup">
-            <button>{homeLocales.signup[lang]}</button>
-          </Link>
+          <p>{homeLocales.connect[lang]}</p>
+          <div className="home-buttons">
+            <Link to="/map">
+              <button className="home-map">{homeLocales.view[lang]}</button>
+            </Link>
+            <Link to="/signup">
+              <button className="home-signup">
+                {homeLocales.signup[lang]}
+              </button>
+            </Link>
+          </div>
           <p>
-            <Link className="link" to="/login">
+            <Link className="login-link" to="/login">
               {homeLocales.login[lang]}
             </Link>
           </p>
         </div>
-      </div>
     );
   }
 }

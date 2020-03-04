@@ -1,6 +1,18 @@
 .App {
   text-align: center;
+  font-family: "Cabin", sans-serif;
+  margin: 0;
+  padding: 0;
 }
+
+/* Import Open Sans */
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans&display=swap);
+
+/* Import Cabin */
+@import url(https://fonts.googleapis.com/css2?family=Cabin&display=swap);
+
+/* Import Open Sans Extra Bold */
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap);
 
 /* .App-logo {
   height: 40vmin;
@@ -41,25 +53,84 @@
 nav {
   display: flex;
   justify-content: space-evenly;
-  background-color: #69c6ff;
-  height: 50px;
+  background-color: #0086ad;
+  height: 100px;
   align-items: center;
+}
+
+.logo-link {
+  margin-left: 10px;
+}
+
+.main-nav {
+  justify-content: space-between;
 }
 
 .navilink a {
   /* This is a link */
   text-decoration: none;
-  color: #b571c7;
+  color: #ffffff;
   font-size: 20px;
   font-weight: bold;
 }
 
+h1 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 48px;
+  color: #fff;
+}
+
 /* home */
 
-.home-component img {
-  position: absolute;
-  width: 100%;
-  margin-left: -50%;
+.home-component {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(https://i.imgur.com/2Eqw5CZ.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 70vh;
+}
+
+.home-component h1 {
+  margin-top: 0;
+  padding-top: 35px;
+}
+
+.home-component p {
+  color: #fff;
+  font-size: 20px;
+}
+
+.home-component button {
+  display: block;
+  margin-left: 525px;
+}
+
+.home-buttons a {
+  text-decoration: none;
+}
+
+.home-map {
+  background-color: #daf8e3;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  height: 60px;
+  width: 200px;
+  border-radius: 7px;
+  border: none;
+  margin-bottom: 10px;
+}
+
+.home-signup {
+  background-color: #00c2c7;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  border-radius: 7px;
+  border: none;
+  height: 60px;
+  width: 200px;
 }
 
 .text-component {
@@ -78,10 +149,9 @@ nav {
 /* .text-component button {
 } */
 
-.link {
+.login-link {
   color: #ffffff;
   text-decoration: none;
-  font-weight: bold;
   font-size: 20px;
 }
 
@@ -112,9 +182,15 @@ nav {
 /* Footer */
 .footer {
   align-items: flex-end;
-  margin-top: 300px;
-  background-color: #3cf2ee;
-  height: 50px;
+  background-color: #0086ad;
+  height: 17vh;
+}
+
+.footer p {
+  margin-top: 0;
+  padding-top: 40px;
+  color: #fff;
+  font-size: 20px;
 }
 
 .leaflet-container {
