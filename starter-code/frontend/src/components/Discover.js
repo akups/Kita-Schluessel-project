@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import discoverLocales from "../locales/locales.discover.json";
 
-class Discover extends React.Component {
+class Discover extends Component {
   state = {
     kitas: [],
     search: "",
@@ -42,7 +42,7 @@ class Discover extends React.Component {
   };
 
   render() {
-    console.log(this.state.select);
+    //console.log(this.state.select);
 
     const search = this.state.search.toLowerCase();
     //const select = this.state.select;
@@ -74,6 +74,61 @@ class Discover extends React.Component {
         </tbody>
       );
     });
+
+    //console.log("DISCOVER", this.props.user.role);
+    if (this.props.user.role === "government") {
+      return (
+        <div>
+          <h1>{discoverLocales.title[lang]}</h1>
+          <Link to="/addkita">
+            <button>Add new kita</button>
+          </Link>
+          <label htmlFor="searchbyname">Search Kita: </label>
+          <input
+            type="text"
+            name="search"
+            value={this.state.search}
+            onChange={this.searchedName}
+            placeholder="search by name"
+          />
+          <label htmlFor="filterbyviertel">Select: </label>
+          <select
+            name="select"
+            type="select"
+            value={this.state.select}
+            onChange={this.searchedName}
+            // selected={this.state.select}
+          >
+            <option value="--">select</option>
+            <option value="Charlottenburg-Wilmersdorf">
+              Charlottenburg-Wilmersdorf
+            </option>
+            <option value="Friedrichshain-Kreuzberg">
+              Friedrichshain-Kreuzberg
+            </option>
+            <option value="Lichtenberg">Lichtenberg</option>
+            <option value="Marzahn-Hellersdorf">Marzahn-Hellersdorf</option>
+            <option value="Mitte">Mitte</option>
+            <option value="Neukoelln">Neukoelln</option>
+            <option value="Pankow">Pankow</option>
+            <option value="Reinickendorf">Reinickendorf</option>
+            <option value="Spandau">Spandau</option>
+            <option value="Steglitz-Zehlendorf">Steglitz-Zehlendorf</option>
+            <option value="Tempelhof-Schoeneberg">Tempelhof-Schoeneberg</option>
+            <option value="Treptow-Koepenick">Treptow-Koepenick</option>
+          </select>
+          <table className="table-container">
+            <thead>
+              <tr>
+                <th width="50%">Kita Name</th>
+                <th width="50%">{discoverLocales.neighborhood[lang]}</th>
+              </tr>
+            </thead>
+            {kita}
+          </table>
+        </div>
+      );
+    }
 
     return (
       <div>

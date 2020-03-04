@@ -19,6 +19,7 @@ import Discover from "./components/Discover.js";
 import Detail from "./components/Detail.js";
 
 import DisplayMaps from "./components/DisplayMaps";
+import AddKita from "./components/AddKita";
 
 class App extends React.Component {
   state = {
@@ -82,12 +83,17 @@ class App extends React.Component {
           render={props => <UserPortal {...props} user={this.state.user} />}
         />
         <Route exact path="/map" component={DisplayMaps} />
-        <Route exact path="/discover" component={Discover} />
+        <Route
+          exact
+          path="/discover"
+          render={props => <Discover {...props} user={this.state.user} />}
+        />
         <Route
           exact
           path="/discover/:id"
           render={props => <Detail {...props} user={this.state.user} />}
         />
+        <Route exact path="/addkita" component={AddKita} />
         <Footer />
       </div>
     );
