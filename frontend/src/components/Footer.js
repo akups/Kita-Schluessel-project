@@ -6,13 +6,13 @@ const Footer = () => {
       <div className="footer-flex">
         <div className="social-icons">
           <span className="Facebook">
-            <img src="./image/Facebook_White.png" alt="Facebook"></img>
+            <img src="../image/Facebook_White.png" alt="Facebook"></img>
           </span>
           <span className="Twitter">
-            <img src="./image/Twitter_White.png" alt="Twitter"></img>
+            <img src="../image/Twitter_White.png" alt="Twitter"></img>
           </span>
           <span className="Instagram">
-            <img src="./image/Instagram_White.png" alt="Instagram"></img>
+            <img src="../image/Instagram_White.png" alt="Instagram"></img>
           </span>
         </div>
       </div>
