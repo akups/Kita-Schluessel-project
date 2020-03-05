@@ -6,5 +6,9 @@
   "neighborhood": {
     "en": "Neighborhood",
     "de": "Bezirk"
+  },
+  "add": {
+    "en": "Add New Kita",
+    "de": "Neue Kita hinzufügen"
   }
 }

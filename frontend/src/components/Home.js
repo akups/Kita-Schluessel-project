@@ -18,24 +18,22 @@ class Home extends Component {
     const lang = localStorage.getItem("lang");
     return (
       <div className="home-component">
-          <h1>KitaSchlüssel</h1>
-          <p>{homeLocales.connect[lang]}</p>
-          <div className="home-buttons">
-            <Link to="/map">
-              <button className="home-map">{homeLocales.view[lang]}</button>
-            </Link>
-            <Link to="/signup">
-              <button className="home-signup">
-                {homeLocales.signup[lang]}
-              </button>
-            </Link>
-          </div>
-          <p>
-            <Link className="login-link" to="/login">
-              {homeLocales.login[lang]}
-            </Link>
-          </p>
+        <h1>{homeLocales.welcome[lang]}</h1>
+        <p>{homeLocales.connect[lang]}</p>
+        <div className="home-buttons">
+          <Link to="/map">
+            <button className="home-map">{homeLocales.view[lang]}</button>
+          </Link>
+          <Link to="/signup">
+            <button className="home-signup">{homeLocales.signup[lang]}</button>
+          </Link>
         </div>
+        <p>
+          <Link className="login-link" to="/login">
+            {homeLocales.login[lang]}
+          </Link>
+        </p>
+      </div>
     );
   }
 }

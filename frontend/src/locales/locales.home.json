@@ -12,7 +12,11 @@
     "de": "Haben Sie bereits ein Konto? Loggen Sie sich ein."
   },
   "connect": {
-    "en": "Connect with open kita spots in your city!",
-    "de": "Verbinden Sie sich mit offenen Kita-Spots in Ihrer Stadt!"
+    "en": "We want to help you connect with open kita spots in your city.",
+    "de": "Wir möchten Ihnen helfen, mit offenen Kita-Spots in Ihrer Stadt in Verbindung zu treten."
+  },
+  "welcome": {
+    "en": "Welcome to KitaSchlüssel!",
+    "de": "Wilkommen bei KitaSchlüssel!"
   }
 }
