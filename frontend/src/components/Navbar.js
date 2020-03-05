@@ -93,7 +93,7 @@ const Navbar = props => {
       </div>
       <div className="login-nav">
         <Link to="/login">{navbarLocales.login[lang]}</Link>
-        <Link to="/signup">{navbarLocales.signup[lang]}</Link>
+        {/* <Link to="/signup">{navbarLocales.signup[lang]}</Link> */}
         <img
           onClick={imageChange}
           height="30px"

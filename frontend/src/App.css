@@ -229,9 +229,13 @@ h1 {
   height: 17vh;
 }
 
+.social-icons {
+  padding-top: 5vh;
+}
+
 .footer p {
   margin-top: 0;
-  padding-top: 40px;
+  padding-top: 2vh;
   color: #fff;
   font-size: 20px;
 }
