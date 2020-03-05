@@ -6,8 +6,9 @@ class ProblemBerlin extends Component {
     return (
       <div>
         <h2>problem in berlin</h2>
-        <img width="70%" src="/image/prognose.png" alt="" />
-        <img src="/frontend/public/image/" alt="" />
+
+        <img width="400px" src="/image/relationber.png" alt="" />
+        <img width="400px" src="/image/prognose_ber.png" alt="" />
       </div>
     );
   }
