@@ -21,7 +21,7 @@ import TrialMap from "./components/TrialMap";
 
 import DisplayMaps from "./components/DisplayMaps";
 import AddKita from "./components/AddKita";
-import ProblemBerlin from "./components/ProblemBerlin";
+import DisplayProblem from "./components/DisplayProblem";
 // import DisplayKitas from "./components/DisplayKitas";
 
 class App extends React.Component {
@@ -100,7 +100,7 @@ class App extends React.Component {
           render={props => <Detail {...props} user={this.state.user} />}
         />
         <Route exact path="/addkita" component={AddKita} />
-        <Route exaxt path="/problem" component={ProblemBerlin} />
+        <Route exaxt path="/problem" component={DisplayProblem} />
         <Footer />
       </div>
     );
