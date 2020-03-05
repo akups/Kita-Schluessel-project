@@ -47,8 +47,8 @@ export default class Map extends Component {
         zoom: 9.5,
         bearing: 0,
         pitch: 0,
-        width: 1000,
-        height: 800
+        width: "100vw",
+        height: "100vh"
       }
     };
     // this.renderPopup = this.renderPopup.bind(this);

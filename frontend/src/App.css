@@ -1,6 +1,8 @@
 .App {
+  background-color: #003e5f;
   text-align: center;
   font-family: "Cabin", sans-serif;
+  color: #fff;
   margin: 0;
   padding: 0;
 }
@@ -52,18 +54,29 @@
 /* Nav bar */
 nav {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background-color: #0086ad;
   height: 100px;
   align-items: center;
+  padding: 10px;
 }
 
 .logo-link {
-  margin-left: 10px;
+  margin-left: 2vw;
 }
 
 .main-nav {
-  justify-content: space-between;
+  display: flex;
+  justify-content: space-evenly;
+  padding-left: 12vw;
+  width: 48vw;
+}
+
+.login-nav {
+  display: flex;
+  justify-content: space-evenly;
+  padding-left: 4vw;
+  width: 15vw;
 }
 
 .navilink a {
@@ -78,6 +91,36 @@ h1 {
   font-family: "Open Sans", sans-serif;
   font-size: 48px;
   color: #fff;
+}
+
+@media screen and (max-width: 640px) {
+  h1 {
+    font-size: 36px;
+  }
+  p {
+    font-size: 14px;
+  }
+  .home-component {
+    height: 20vh;
+  }
+  .home-buttons {
+    margin-left: -7vw;
+  }
+  .main-nav {
+    padding-left: 7vw;
+    width: 70vw;
+  }
+  .navilink a {
+    font-size: 16px;
+  }
+  .login-nav {
+    height: 3vh;
+    width: 32vw;
+  }
+  .mapboxgl-map {
+    width: 50%;
+    height: 50%;
+  }
 }
 
 /* home */
@@ -103,7 +146,7 @@ h1 {
 
 .home-component button {
   display: block;
-  margin-left: 525px;
+  margin-left: 42vw;
 }
 
 .home-buttons a {
