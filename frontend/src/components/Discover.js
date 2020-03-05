@@ -80,9 +80,7 @@ class Discover extends Component {
       return (
         <div>
           <h1>{discoverLocales.title[lang]}</h1>
-          <Link to="/addkita">
-            <button>Add new kita</button>
-          </Link>
+
           <label htmlFor="searchbyname">Search Kita: </label>
           <input
             type="text"
@@ -117,6 +115,12 @@ class Discover extends Component {
             <option value="Tempelhof-Schoeneberg">Tempelhof-Schoeneberg</option>
             <option value="Treptow-Koepenick">Treptow-Koepenick</option>
           </select>
+          <Link to="/discover/hamburg">
+            <button>Discover Hamburg</button>
+          </Link>
+          <Link to="/addkita">
+            <button>Add new kita</button>
+          </Link>
           <table className="table-container">
             <thead>
               <tr>
@@ -167,6 +171,9 @@ class Discover extends Component {
           <option value="Tempelhof-Schoeneberg">Tempelhof-Schoeneberg</option>
           <option value="Treptow-Koepenick">Treptow-Koepenick</option>
         </select>
+        <Link to="/discover/hamburg">
+          <button>Discover Hamburg</button>
+        </Link>
         <table className="table-container">
           <thead>
             <tr>
