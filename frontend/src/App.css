@@ -342,6 +342,15 @@ h1 {
   padding-left: 19vw;
 }
 
+.detail-container-text {
+  width: 40%;
+}
+
+.detail-container-text {
+  display: flex;
+  justify-content: space-around;
+}
+
 .detail-container a {
   text-decoration: none;
   color: black;
