@@ -84,29 +84,37 @@ class Detail extends Component {
     return (
       <div className="detail-container">
         <h1>{this.state.kitas.name}</h1>
-        <div className="detail-image-container">
-          <img height="200px" width="200px" src="/image/kitaimage.png" alt="" />
+        <div className="markus-container">
+          <div className="detail-image-container">
+            <img
+              height="200px"
+              width="200px"
+              src="/image/kitaimage.png"
+              alt=""
+            />
+          </div>
+          <div className="detail-container-text">
+            <h3>{detailsLocales.address[lang]}</h3>
+            <p>{this.state.kitas.adresse}</p>
+            <h3>{detailsLocales.postcode[lang]}:</h3>
+            <p>{this.state.kitas.postleitzahl}</p>
+            <h3>{detailsLocales.city[lang]}</h3>
+            <p>{this.state.kitas.stadt}</p>
+            <h3>{detailsLocales.phone[lang]}</h3>
+            <p>
+              <a href={"tel:" + this.state.kitas.telefon}>
+                {this.state.kitas.telefon}
+              </a>
+            </p>
+            <h3>{detailsLocales.email[lang]}</h3>
+            <p>
+              <a href={"mailto:" + this.state.kitas.email}>
+                {this.state.kitas.email}
+              </a>
+            </p>
+          </div>
         </div>
-        <div className="detail-container-text">
-          <h3>{detailsLocales.address[lang]}</h3>
-          <p>{this.state.kitas.adresse}</p>
-          <h3>{detailsLocales.postcode[lang]}:</h3>
-          <p>{this.state.kitas.postleitzahl}</p>
-          <h3>{detailsLocales.city[lang]}</h3>
-          <p>{this.state.kitas.stadt}</p>
-          <h3>{detailsLocales.phone[lang]}</h3>
-          <p>
-            <a href={"tel:" + this.state.kitas.telefon}>
-              {this.state.kitas.telefon}
-            </a>
-          </p>
-          <h3>{detailsLocales.email[lang]}</h3>
-          <p>
-            <a href={"mailto:" + this.state.kitas.email}>
-              {this.state.kitas.email}
-            </a>
-          </p>
-        </div>
+
         <Link to="/discover">
           <button>{detailsLocales.return[lang]}</button>
         </Link>
