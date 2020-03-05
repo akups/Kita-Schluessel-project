@@ -1,10 +1,14 @@
 {
   "title": {
-    "en": "Sign Up",
-    "de": "Registrieren"
+    "en": "Create New Account",
+    "de": "Konto Erstellen"
   },
   "welcome": {
     "en": "Welcome! Please create an account",
     "de": "Willkommen! Bitte erstellen Sie ein Konto. "
+  },
+  "submit": {
+    "en": "Submit",
+    "de": "Weiter"
   }
 }

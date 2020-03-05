@@ -92,7 +92,7 @@ h1 {
   font-size: 48px;
   color: #fff;
 }
-/* Responsive Styling */
+/* Responsive Styling (max-width: 640px) */
 @media screen and (max-width: 640px) {
   h1 {
     font-size: 36px;
@@ -117,9 +117,49 @@ h1 {
     height: 3vh;
     width: 32vw;
   }
-  .mapboxgl-map {
-    width: 50%;
-    height: 50%;
+  .login {
+    padding-left: 15vw !important;
+    padding-right: 15vw !important;
+  }
+  .signup-component {
+    padding-left: 17vw !important;
+    padding-right: 17vw !important;
+  }
+  .signup-container {
+    padding-left: 20vw !important;
+  }
+}
+
+/* iPhone X Media Queries */
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .home-component {
+    height: 25vh;
+    padding-top: 2vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  .footer {
+    height: 21vh !important;
+  }
+  .home-buttons {
+    margin-left: -23vw;
+  }
+  .navilink a {
+    font-size: 12px;
+  }
+  .main-nav {
+    width: 15vw;
+  }
+  .login {
+    height: 65vh !important;
+    padding-right: 10vw !important;
+    padding-left: 10vw !important;
+  }
+  .login-form {
+    width: 30vw !important;
+  }
+  .login-form input {
+    width: 35vw !important;
   }
 }
 
@@ -131,7 +171,7 @@ h1 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 70vh;
+  min-height: 65vh;
 }
 
 .home-component h1 {
@@ -199,21 +239,75 @@ h1 {
 }
 
 /* Signup */
-.signup-componenet {
-  background-color: #3cf2efc0;
-  height: 800px;
+.signup-component {
+  background-color: #003e5f;
+  height: 66vh;
+  padding-left: 19vw;
+  padding-right: 19vw;
+}
+
+.signup-container {
+  display: table-caption;
+  padding-left: 22vw;
+}
+
+.signup-container input {
+  width: 15vw;
+  padding: 1vh;
+  border-radius: 3px;
+  border: 2px solid #97ebdb;
+}
+
+.signup-container button {
+  height: 55px;
+  width: 140px;
+  margin-top: 3vh;
+  background-color: #00c2c7;
+  color: #005582;
+  font-size: 24px;
+  border-radius: 7px;
+  border: none;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  padding: 10px;
 }
 
 /* Login */
 .login {
   height: 60vh;
-  padding-left: 20vw;
-  padding-right: 20vw;
+  padding-left: 19vw;
+  padding-right: 19vw;
 }
 
 .login-form {
   display: table-caption;
-  padding-left: 25vw;
+  padding-left: 22vw;
+  padding-bottom: 2vh;
+}
+
+.login-form label {
+  padding-top: 2vh;
+}
+
+.login-form input {
+  width: 15vw;
+  padding: 1vh;
+  border-radius: 3px;
+  border: 2px solid #97ebdb;
+}
+
+.login-form button {
+  height: 55px;
+  width: 140px;
+  margin-top: 3vh;
+  background-color: #00c2c7;
+  color: #005582;
+  font-size: 24px;
+  border-radius: 7px;
+  border: none;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  padding: 10px;
 }
 
 /* Discover */

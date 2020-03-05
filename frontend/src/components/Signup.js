@@ -58,42 +58,43 @@ class Signup extends Component {
       return <Redirect to="/userportal" />;
     }
     return (
-      <div className="signup-componenet">
+      <div className="signup-component">
         <h1>{signupLocales.title[lang]}</h1>
         <p>{signupLocales.welcome[lang]}</p>
-        <form>
-          <label htmlFor="name">Name</label>
-          <input
-            name="name"
-            id="name"
-            value={this.state.name}
-            onChange={this.setFormState}
-            type="text"
-          />
-          <label htmlFor="email">Email Address</label>
-          <input
-            name="email"
-            id="email"
-            type="text"
-            value={this.state.email}
-            onChange={this.setFormState}
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            value={this.state.password}
-            onChange={this.setFormState}
-          />
-          <label htmlFor="role">Role</label>
-          <select
-            name="role"
-            id="role"
-            value={this.state.role}
-            onChange={this.onChange}
-          >
-            {/* <option value="">Parent</option>
+        <div className="signup-container">
+          <form>
+            <label htmlFor="name">Name</label>
+            <input
+              name="name"
+              id="name"
+              value={this.state.name}
+              onChange={this.setFormState}
+              type="text"
+            />
+            <label htmlFor="email">Email</label>
+            <input
+              name="email"
+              id="email"
+              type="text"
+              value={this.state.email}
+              onChange={this.setFormState}
+            />
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              value={this.state.password}
+              onChange={this.setFormState}
+            />
+            <label htmlFor="role">Role</label>
+            <select
+              name="role"
+              id="role"
+              value={this.state.role}
+              onChange={this.onChange}
+            >
+              {/* <option value="">Parent</option>
             <option value="">Government</option>
             <option value="">Owner</option>
 
@@ -102,14 +103,15 @@ class Signup extends Component {
               onChange={this.onChange}
               id="role"
             /> */}
-            <option>parent</option>
-            <option>government</option>
-            <option>owner</option>
-          </select>
-          <button onClick={this.handleSubmit} type="submit">
-            Submit
-          </button>
-        </form>
+              <option>Parent</option>
+              <option>Government Official</option>
+              <option>Kita Owner</option>
+            </select>
+            <button onClick={this.handleSubmit} type="submit">
+              {signupLocales.submit[lang]}
+            </button>
+          </form>
+        </div>
         {this.state.message && <p>{this.state.message}</p>}
       </div>
     );
