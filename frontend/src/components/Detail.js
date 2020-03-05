@@ -45,7 +45,12 @@ class Detail extends Component {
     if (this.props.user.role === "government") {
       return (
         <div className="detail-container">
-          <img height="200px" width="200px" src="/image/kitaimage.png" alt="" />
+          <img
+            height="200px"
+            width="200px"
+            src="/image/kindergarten.png"
+            alt=""
+          />
           <div className="detail-container-text">
             <h1>{this.state.kitas.name}</h1>
             <h3>{detailsLocales.address[lang]}</h3>
