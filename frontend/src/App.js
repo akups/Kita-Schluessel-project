@@ -17,6 +17,7 @@ import DiscoverHamburg from "./components/DiscoverHamburg";
 import Discover from "./components/Discover.js";
 // import Map from "./components/Map.js";
 import Detail from "./components/Detail.js";
+import TrialMap from "./components/TrialMap";
 
 import DisplayMaps from "./components/DisplayMaps";
 import AddKita from "./components/AddKita";
@@ -85,6 +86,7 @@ class App extends React.Component {
           render={props => <UserPortal {...props} user={this.state.user} />}
         />
         <Route exact path="/map" component={DisplayMaps} />
+        <Route exact path="/trialmap" component={TrialMap} />
         <Route
           exact
           path="/discover"
