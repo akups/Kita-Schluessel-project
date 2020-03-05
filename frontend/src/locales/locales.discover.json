@@ -10,5 +10,13 @@
   "add": {
     "en": "Add New Kita",
     "de": "Neue Kita hinzufügen"
+  },
+  "suburb": {
+    "en": "Suburb",
+    "de": "Stadteil"
+  },
+  "name": {
+    "en": "Kita",
+    "de": "Kita"
   }
 }

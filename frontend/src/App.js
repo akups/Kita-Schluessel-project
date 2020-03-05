@@ -15,13 +15,18 @@ import UserPortal from "./components/UserPortal";
 import Footer from "./components/Footer.js";
 import DiscoverHamburg from "./components/DiscoverHamburg";
 import Discover from "./components/Discover.js";
+
 // import Map from "./components/Map.js";
 import Detail from "./components/Detail.js";
-import TrialMap from "./components/TrialMap";
+import HamburgDetails from "./components/HamburgDetails.js";
+//import TrialMap from "./components/TrialMap";
 
 import DisplayMaps from "./components/DisplayMaps";
 import AddKita from "./components/AddKita";
+import AddKitaHamburg from "./components/AddKitaHamburg";
 import ProblemBerlin from "./components/ProblemBerlin";
+import DisplayKitas from "./components/DisplayKitas";
+import DisplayProblem from "./components/DisplayProblem";
 // import DisplayKitas from "./components/DisplayKitas";
 
 class App extends React.Component {
@@ -86,21 +91,35 @@ class App extends React.Component {
           render={props => <UserPortal {...props} user={this.state.user} />}
         />
         <Route exact path="/map" component={DisplayMaps} />
-        <Route exact path="/trialmap" component={TrialMap} />
+        {/* <Route exact path="/trialmap" component={TrialMap} /> */}
         <Route
           exact
           path="/discover"
           render={props => <Discover {...props} user={this.state.user} />}
         />
+        <Route
+          exact
+          path="/discover/hamburg"
+          render={props => (
+            <DiscoverHamburg {...props} user={this.state.user} />
+          )}
+        />
         {/* <Route exact path="/discover" component={Discover} /> */}
-        <Route exact path="/discover/hamburg" component={DiscoverHamburg} />
+        {/* <Route exact path="/discover/hamburg" component={DiscoverHamburg} /> */}
         <Route
           exact
           path="/discover/:id"
           render={props => <Detail {...props} user={this.state.user} />}
         />
+        <Route
+          exact
+          path="/discoverHamburg/:id"
+          render={props => <HamburgDetails {...props} user={this.state.user} />}
+        />
         <Route exact path="/addkita" component={AddKita} />
-        <Route exaxt path="/problem" component={ProblemBerlin} />
+        <Route exact path="/addkita/hamburg" component={AddKitaHamburg} />
+        {/* <Route exaxt path="/problem" component={ProblemBerlin} /> */}
+        <Route exaxt path="/problem" component={DisplayProblem} />
         <Footer />
       </div>
     );
