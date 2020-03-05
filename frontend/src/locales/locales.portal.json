@@ -1,18 +1,22 @@
 {
-    "greeting": {
-        "en": "Welcome Back",
-        "de": "Willkommen"
-    },
-    "article": {
-        "en": "Check out what's new!",
-        "de": "Schauen Sie, was neu ist!"
-    },
-    "discover": {
-        "en": "Discover",
-        "de": "Entdecke"
-    },
-    "map": {
-        "en": "View City Maps",
-        "de": "Stadtpläne anzeigen"
-    }
+  "greeting": {
+    "en": "Welcome Back",
+    "de": "Willkommen"
+  },
+  "article": {
+    "en": "Check out what's new!",
+    "de": "Schauen Sie, was neu ist!"
+  },
+  "discover": {
+    "en": "Discover Berlin",
+    "de": "Entdecke Berlin"
+  },
+  "map": {
+    "en": "View City Maps",
+    "de": "Stadtpläne anzeigen"
+  },
+  "hamburg": {
+    "en": "Discover Hamburg",
+    "de": "Entdecke Hamburg"
+  }
 }

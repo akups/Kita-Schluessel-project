@@ -68,9 +68,7 @@ export default class DiscoverHamburg extends Component {
       return (
         <div>
           <h1>{discoverLocales.title[lang]}</h1>
-          <Link to="/addkita/hamburg">
-            <button>Add new kita</button>
-          </Link>
+
           <label htmlFor="searchbyname">Search Kita</label>
           <input
             type="text"
@@ -93,6 +91,12 @@ export default class DiscoverHamburg extends Component {
               <option value={suburb}>{suburb}</option>
             ))}
           </select>
+          <Link to="/discover">
+            <button>Discover Berlin</button>
+          </Link>
+          <Link to="/addkita/hamburg">
+            <button>Add new kita</button>
+          </Link>
           <tbody className="table">
             <th>{discoverLocales.name[lang]}</th>
             <th>{discoverLocales.suburb[lang]}</th>
@@ -128,6 +132,9 @@ export default class DiscoverHamburg extends Component {
             <option value={suburb}>{suburb}</option>
           ))}
         </select>
+        <Link to="/discover">
+          <button>Discover Berlin</button>
+        </Link>
         <tbody className="table">
           <th>{discoverLocales.name[lang]}</th>
           <th>{discoverLocales.suburb[lang]}</th>
