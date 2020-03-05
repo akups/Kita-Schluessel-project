@@ -12,7 +12,7 @@ class UserPortal extends Component {
     const lang = localStorage.getItem("lang");
     //console.log("USER", this.props.user);
     return (
-      <div>
+      <div className="portal-container">
         <h1>
           {portalLocales.greeting[lang]} {this.props.user.name}!
         </h1>
@@ -25,7 +25,7 @@ class UserPortal extends Component {
           <button>{portalLocales.map[lang]}</button>
         </Link>
         <Link to="/discover/hamburg">
-          <button>Discover Hamburg</button>
+          <button>{portalLocales.hamburg[lang]}</button>
         </Link>
       </div>
     );
