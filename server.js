@@ -8,7 +8,7 @@ const logger = require("morgan");
 
 const app = express();
 
-app.use(express.static("frontend/build"));
+app.use(express.static("frontend/build")); // 2. this was added as part of deployment process in order to allow people to view from any server
 
 app.use(express.urlencoded({ extended: true })); // sets the `body` object in the `request` with the values from an HTML POST form
 
@@ -22,7 +22,7 @@ const routes = require("./routes"); // this is our controller and will manage al
 app.use(routes);
 
 app.use((req, res) => {
-  res.sendFile(__dirname + "/frontend/build/index.html");
+  res.sendFile(__dirname + "/frontend/build/index.html"); // 1. this was added as part of deployment process in order to allow people to view from any server
 });
 
 app.listen(process.env.PORT, () => {
