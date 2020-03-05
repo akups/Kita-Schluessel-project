@@ -361,6 +361,14 @@ h1 {
   color: #003e5f;
 }
 
+.map-overlay h3 {
+  color: #003e5f;
+}
+
+.legend-key span {
+  color: #003e5f;
+}
+
 /* Footer */
 .footer {
   align-items: flex-end;

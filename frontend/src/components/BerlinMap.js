@@ -95,7 +95,7 @@ export default class BerlinMap extends Component {
               backgroundColor: color
             }}
           ></span>
-          <span>{layer}</span>
+          <span style={{ color: "#003333" }}>{layer}</span>
         </div>
       );
     });
@@ -129,10 +129,7 @@ export default class BerlinMap extends Component {
             >
               {/* <h2>Berlin {mapLocales.kitas[lang]}</h2> */}
 
-              <h2>Berlin Kitaplätze</h2>
-              <div id="pd">
-                <p>{mapLocales.move[lang]}</p>
-              </div>
+              <h3>Berlin {mapLocales.move[lang]}</h3>
             </div>
             <div class="map-overlay" id="legend">
               {this.drawLegends()}

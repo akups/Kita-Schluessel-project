@@ -9,7 +9,8 @@ const navStyle = {
   position: "absolute",
   top: 0,
   left: 0,
-  padding: "10px"
+  padding: "10px",
+  width: "30px"
 };
 
 const layers = [
@@ -73,7 +74,7 @@ export default class Map extends Component {
               backgroundColor: color
             }}
           ></span>
-          <span>{layer}</span>
+          <span style={{ color: "#003333" }}>{layer}</span>
         </div>
       );
     });
@@ -100,17 +101,13 @@ export default class Map extends Component {
               style={{
                 display: "inline-block",
                 width: 200,
-                height: 150,
+                height: 80,
                 backgroundColor: "white",
                 border: 20
               }}
             >
-              <h2>Hamburg {mapLocales.kitas[lang]}</h2>
-              <div id="pd">
-                <p>{mapLocales.move[lang]}</p>
-              </div>
-            </div>
-            <div class="map-overlay" id="legend">
+              <h3>Hamburg {mapLocales.move[lang]}</h3>
+              <div class="map-overlay" id="legend"></div>
               {this.drawLegends()}
             </div>
           </div>
