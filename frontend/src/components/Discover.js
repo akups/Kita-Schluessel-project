@@ -80,13 +80,9 @@ class Discover extends Component {
       return (
         <div>
           <h1>{discoverLocales.title[lang]}</h1>
-<<<<<<< HEAD
           <Link to="/addkita">
             <button>{discoverLocales.add[lang]}</button>
           </Link>
-=======
-
->>>>>>> b0d45291d7f822329ccc5bc690ddd8cb5a13f830
           <label htmlFor="searchbyname">Search Kita: </label>
           <input
             type="text"
