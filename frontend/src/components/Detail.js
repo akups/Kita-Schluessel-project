@@ -39,7 +39,7 @@ class Detail extends Component {
     const lang = localStorage.getItem("lang");
 
     if (!this.state.kitas) {
-      return <h1>LOADING</h1>;
+      return <h1></h1>;
     }
 
     if (this.props.user.role === "government") {
