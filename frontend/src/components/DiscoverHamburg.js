@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-// import discoverLocales from "../locales/locales.discover.json";
+import discoverLocales from "../locales/locales.discover.json";
 
 export default class DiscoverHamburg extends Component {
   state = {
@@ -45,14 +45,13 @@ export default class DiscoverHamburg extends Component {
     const filteredKitas = filteredKitasBySelect.filter(kita => {
       return kita.kita_name.toLowerCase().includes(search);
     });
-    // const lang = localStorage.getItem("lang");
+
     const suburbs = new Set();
     const kita = filteredKitas.map(el => {
       suburbs.add(el.kita_suburb);
       return (
         <tr key={el._id}>
           <Link className="kita-container" to={`/discoverHamburg/${el._id}`}>
-            {/* <h1>{discoverLocales.title[lang]}</h1> */}
             <td>{el.kita_name}</td>
           </Link>
           <td>{el.kita_suburb}</td>
@@ -65,11 +64,48 @@ export default class DiscoverHamburg extends Component {
     // for (let i = 0; i < kita.length; i++) {
     //   console.log(kita[i].kita_suburb);
     // }
+    if (this.props.user.role === "government") {
+      return (
+        <div>
+          <h1>{discoverLocales.title[lang]}</h1>
+          <Link to="/addkita/hamburg">
+            <button>Add new kita</button>
+          </Link>
+          <label htmlFor="searchbyname">Search Kita</label>
+          <input
+            type="text"
+            name="search"
+            value={this.state.search}
+            onChange={this.searchedKita}
+            placeholder="search by name"
+          />
+          <label htmlFor="filterbysuburb">Select your Suburb: </label>
+          <select
+            size="3"
+            name="select"
+            type="select"
+            value={this.state.select}
+            onChange={this.searchedKita}
+          >
+            {[...suburbs].map((
+              suburb //the suburbs created by new set is an object but we can't map through an object so we spread it in order to map through for our select
+            ) => (
+              <option value={suburb}>{suburb}</option>
+            ))}
+          </select>
+          <tbody className="table">
+            <th>{discoverLocales.name[lang]}</th>
+            <th>{discoverLocales.suburb[lang]}</th>
+            {kita}
+          </tbody>
+        </div>
+      );
+    }
 
     return (
       <div>
-        {/* <h1>{discoverLocales.title[lang]}</h1> */}
-        <h1>Discover</h1>
+        <h1>{discoverLocales.title[lang]}</h1>
+
         <label htmlFor="searchbyname">Search Kita</label>
         <input
           type="text"
@@ -92,7 +128,11 @@ export default class DiscoverHamburg extends Component {
             <option value={suburb}>{suburb}</option>
           ))}
         </select>
-        <tbody className="table">{kita}</tbody>
+        <tbody className="table">
+          <th>{discoverLocales.name[lang]}</th>
+          <th>{discoverLocales.suburb[lang]}</th>
+          {kita}
+        </tbody>
       </div>
     );
   }

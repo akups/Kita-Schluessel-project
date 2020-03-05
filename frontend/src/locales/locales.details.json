@@ -26,5 +26,9 @@
   "return": {
     "en": "Return to Discover",
     "de": "Zurück zu Entdecke"
+  },
+  "suburb": {
+    "en": "Suburb",
+    "de": "Stadteil"
   }
 }

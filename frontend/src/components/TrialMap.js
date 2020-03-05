@@ -1,10 +1,10 @@
 // import React, { Component } from "react";
 // import MapGL, { NavigationControl, Source, Layer } from "react-map-gl";
 // import mapLocales from "../locales/locales.map.json";
-// import ControlPanel from "./control-panel";
+// // import ControlPanel from ".\/control-panel";
 
-// import { dataLayer } from "./map-style.js";
-// import { updateValue } from "./utils";
+// // import { dataLayer } from "./map-style.js";
+// // import { updateValue } from "./utils";
 // import { json as requestJson } from "d3-request";
 
 // const TOKEN =
@@ -112,6 +112,7 @@
 //   componentDidMount() {
 //     requestJson("../data/BerlinKitaPlaetze.geojson", (error, response) => {
 //       if (!error) {
+//         console.log(response);
 //         this._loadData(response);
 //       }
 //     });
@@ -170,7 +171,7 @@
 //   }
 
 //   render() {
-//     const { viewport } = this.state;
+//     const { viewport, data } = this.state;
 //     const lang = localStorage.getItem("lang");
 
 //     return (
@@ -214,11 +215,11 @@
 //           </Source>
 //           {this._renderTooltip()}
 //         </MapGL>
-//         <ControlPanel
+//         {/* <ControlPanel
 //           containerComponent={this.props.containerComponent}
 //           settings={this.state}
 //           onChange={this._updateSettings}
-//         />
+//         /> */}
 //       </div>
 //     );
 //   }

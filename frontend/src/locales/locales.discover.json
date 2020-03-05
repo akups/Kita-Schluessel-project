@@ -6,5 +6,7 @@
   "neighborhood": {
     "en": "Neighborhood",
     "de": "Bezirk"
-  }
+  },
+  "suburb": { "en": "Suburb", "de": "Stadteil" },
+  "name": { "en": "Kita", "de": "Kita" }
 }
