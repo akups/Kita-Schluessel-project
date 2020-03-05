@@ -50,6 +50,7 @@ router.post("/addkita", (req, res) => {
   } = req.body;
   //console.log("BACKEND", req.body);
   //3. Then create a new Kita with information from frontend
+  req.user;
   Kita.create({
     name: name,
     district: district,

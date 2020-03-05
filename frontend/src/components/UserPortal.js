@@ -25,7 +25,7 @@ class UserPortal extends Component {
           <button>{portalLocales.map[lang]}</button>
         </Link>
         <Link to="/discover/hamburg">
-          <button>Click me</button>
+          <button>Discover Hamburg</button>
         </Link>
       </div>
     );

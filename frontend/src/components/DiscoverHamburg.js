@@ -34,7 +34,7 @@ export default class DiscoverHamburg extends Component {
   };
   render() {
     console.log(this.state.hamburgKitas);
-
+    const lang = localStorage.getItem("lang");
     const search = this.state.search.toLowerCase();
     const filteredKitasBySelect = this.state.hamburgKitas.filter(kita => {
       if (this.state.select === "--") {
@@ -46,21 +46,25 @@ export default class DiscoverHamburg extends Component {
       return kita.kita_name.toLowerCase().includes(search);
     });
     // const lang = localStorage.getItem("lang");
+    const suburbs = new Set();
     const kita = filteredKitas.map(el => {
+      suburbs.add(el.kita_suburb);
       return (
         <tr key={el._id}>
           <Link className="kita-container" to={`/discoverHamburg/${el._id}`}>
+            {/* <h1>{discoverLocales.title[lang]}</h1> */}
             <td>{el.kita_name}</td>
           </Link>
           <td>{el.kita_suburb}</td>
         </tr>
       );
     });
-    //
+    //ˇ
+    // // loop through all the kitas and add the unique suburb names
 
-    const suburbs = ["Berlin", "Bonn"];
-
-    // loop through all the kitas and add the unique suburb names
+    // for (let i = 0; i < kita.length; i++) {
+    //   console.log(kita[i].kita_suburb);
+    // }
 
     return (
       <div>
@@ -74,14 +78,17 @@ export default class DiscoverHamburg extends Component {
           onChange={this.searchedKita}
           placeholder="search by name"
         />
-        <label htmlFor="filterbysuburb">Select: </label>
+        <label htmlFor="filterbysuburb">Select your Suburb: </label>
         <select
+          size="3"
           name="select"
           type="select"
           value={this.state.select}
           onChange={this.searchedKita}
         >
-          {suburbs.map(suburb => (
+          {[...suburbs].map((
+            suburb //the suburbs created by new set is an object but we can't map through an object so we spread it in order to map through for our select
+          ) => (
             <option value={suburb}>{suburb}</option>
           ))}
         </select>
