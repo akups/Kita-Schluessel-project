@@ -51,28 +51,32 @@ class Login extends Component {
     //   return <Redirect to="/userportal" />;
     // }
     return (
-      <div>
+      <div className="login">
         <h1>{loginLocales.title[lang]}</h1>
         <p>{loginLocales.prompt[lang]}</p>
-        <form>
-          <label htmlFor="email">email:</label>
-          <input
-            type="text"
-            name="email"
-            id="email"
-            value={this.state.email}
-            onChange={this.setFormState}
-          />
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            value={this.state.password}
-            onChange={this.setFormState}
-          />
-          <button onClick={this.handleSubmit}>Login</button>
-        </form>
+        <div className="login-form">
+          <form>
+            <label htmlFor="email">{loginLocales.email[lang]}</label>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              value={this.state.email}
+              onChange={this.setFormState}
+            />
+            <label htmlFor="password">{loginLocales.password[lang]}</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              value={this.state.password}
+              onChange={this.setFormState}
+            />
+            <button onClick={this.handleSubmit}>
+              {loginLocales.login[lang]}
+            </button>
+          </form>
+        </div>
         {this.state.message && <p>{this.state.message}</p>}
       </div>
     );

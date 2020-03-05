@@ -92,7 +92,7 @@ h1 {
   font-size: 48px;
   color: #fff;
 }
-
+/* Responsive Styling */
 @media screen and (max-width: 640px) {
   h1 {
     font-size: 36px;
@@ -204,6 +204,18 @@ h1 {
   height: 800px;
 }
 
+/* Login */
+.login {
+  height: 60vh;
+  padding-left: 20vw;
+  padding-right: 20vw;
+}
+
+.login-form {
+  display: table-caption;
+  padding-left: 25vw;
+}
+
 /* Discover */
 
 .table a {
@@ -220,6 +232,11 @@ h1 {
 .detail-container a {
   text-decoration: none;
   color: black;
+}
+
+/* Map */
+.map-overlay p {
+  color: #003e5f;
 }
 
 /* Footer */
