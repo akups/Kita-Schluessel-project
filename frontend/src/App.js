@@ -24,8 +24,7 @@ import HamburgDetails from "./components/HamburgDetails.js";
 import DisplayMaps from "./components/DisplayMaps";
 import AddKita from "./components/AddKita";
 import AddKitaHamburg from "./components/AddKitaHamburg";
-import ProblemBerlin from "./components/ProblemBerlin";
-import DisplayKitas from "./components/DisplayKitas";
+
 import DisplayProblem from "./components/DisplayProblem";
 // import DisplayKitas from "./components/DisplayKitas";
 
@@ -118,7 +117,8 @@ class App extends React.Component {
         />
         <Route exact path="/addkita" component={AddKita} />
         <Route exact path="/addkita/hamburg" component={AddKitaHamburg} />
-        {/* <Route exaxt path="/problem" component={ProblemBerlin} /> */}
+        {/* <Route exaxt path="/problem" component={ProblemBerlin} />
+        <Route exaxt path="/problem" component={ProblemHamburg} /> */}
         <Route exaxt path="/problem" component={DisplayProblem} />
         <Footer />
       </div>

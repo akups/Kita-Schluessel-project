@@ -43,7 +43,12 @@ class HamburgDetails extends Component {
     if (this.props.user.role === "government") {
       return (
         <div className="detail-container">
-          <img height="200px" width="200px" src="/image/kitaimage.png" alt="" />
+          <img
+            height="200px"
+            width="200px"
+            src="/image/kindergarten.png"
+            alt=""
+          />
           <h1>{this.state.kitas.kita_name}</h1>
           <h3>{detailsLocales.address[lang]}</h3>
           <p>{this.state.kitas.kita_address}</p>
@@ -64,15 +69,19 @@ class HamburgDetails extends Component {
     //console.log("DETAILS?", this.props.user.role);
     return (
       <div className="detail-container">
-        <img height="200px" width="200px" src="/image/kitaimage.png" alt="" />
+        <img
+          height="200px"
+          width="200px"
+          src="/image/kindergarten.png"
+          alt=""
+        />
         <h1>{this.state.kitas.kita_name}</h1>
         <h3>{detailsLocales.address[lang]}</h3>
-        <p>{this.state.kitas.adresse}</p>
+        <p>{this.state.kitas.kita_address}</p>
         <h3>{detailsLocales.postcode[lang]}:</h3>
-        <p>{this.state.kitas.postleitzahl}</p>
+        <p>{this.state.kitas.plz}</p>
         <h3>{detailsLocales.city[lang]}</h3>
-        <p>{this.state.kitas.stadt}</p>
-        <h3>{detailsLocales.phone[lang]}</h3>
+        <p>Hamburg</p>
 
         <Link to="/discover/hamburg">
           <button>{detailsLocales.return[lang]}</button>

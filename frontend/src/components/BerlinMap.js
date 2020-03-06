@@ -57,24 +57,6 @@ export default class BerlinMap extends Component {
     };
   }
 
-  onloadMap = event => {
-    let legend;
-    for (let i = 0; i < layers.length; i++) {
-      var layer = layers[i];
-      var color = colors[i];
-      var item = document.createElement("div");
-      var key = document.createElement("span");
-      key.className = "legend-key";
-      key.style.backgroundColor = color;
-
-      var value = document.createElement("span");
-      value.innerHTML = layer;
-      item.appendChild(key);
-      item.appendChild(value);
-      legend.appendChild(item);
-    }
-  };
-
   drawLegends = () => {
     return layers.map((layer, i) => {
       const color = colors[i];
@@ -127,8 +109,6 @@ export default class BerlinMap extends Component {
                 border: 20
               }}
             >
-              {/* <h2>Berlin {mapLocales.kitas[lang]}</h2> */}
-
               <h3>Berlin {mapLocales.move[lang]}</h3>
             </div>
             <div class="map-overlay" id="legend">

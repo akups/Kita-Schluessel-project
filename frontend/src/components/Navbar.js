@@ -87,7 +87,7 @@ const Navbar = props => {
         ></img>
       </Link>
       <div className="main-nav">
-        <Link to="/data">{navbarLocales.data[lang]}</Link>
+        <Link to="/problem">{navbarLocales.data[lang]}</Link>
         <Link to="/map">{navbarLocales.map[lang]}</Link>
         <Link to="/discover">{navbarLocales.discover[lang]}</Link>
       </div>
