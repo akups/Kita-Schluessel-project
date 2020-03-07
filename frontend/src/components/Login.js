@@ -27,7 +27,7 @@ class Login extends Component {
         //   redirect: false
         // });
         this.props.setUser(response.data);
-        this.props.history.push("userportal");
+        this.props.history.push("/userportal");
       })
       .catch(err => {
         console.log(err);
