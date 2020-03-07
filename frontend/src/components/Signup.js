@@ -23,16 +23,16 @@ class Signup extends Component {
         role: this.state.role
       })
       .then(response => {
-        //console.log("RSPONSE", response);
+        console.log("RSPONSE", response);
 
-        //this.props.history.push("/");
+        this.props.history.push("/");
 
-        //this.props.setUser(this.response.data);
-        // this.setState({
-        //   redirect: true
-        // });
-        this.props.setUser(response.data);
-        this.props.history.push("/userportal");
+        this.props.setUser(this.response.data);
+        this.setState({
+          redirect: true
+        });
+        // this.props.setUser(response.data);
+        // this.props.history.push("/userportal");
       })
       .catch(err => {
         this.setState({
