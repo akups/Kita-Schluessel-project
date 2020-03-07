@@ -6,5 +6,21 @@
   "hamburg": {
     "en": "The problem in Hamburg",
     "de": "Das Problem in Hamburg"
+  },
+  "headingberlin": {
+    "en": "Relationship between Kita Spots and Female Employment in Berlin",
+    "de": "Die Verbindung zwischen Kitaplätze und Wiebliche Arbeitkräfte in Berlin"
+  },
+  "headinghamburg": {
+    "en": "Relationship between Kita Spots and Female Employment in Hamburg",
+    "de": "Die Verbindung zwischen Kitaplätze und Wiebliche Arbeitkräfte in Hamburg"
+  },
+  "forecastb": {
+    "en": "Forecast in Berlin",
+    "de": "Prognose in Berlin"
+  },
+  "forecasthh": {
+    "en": "Forecast in Hamburg",
+    "de": "Prognose in Hamburg"
   }
 }

@@ -7,10 +7,14 @@ class ProblemBerlin extends Component {
     const lang = localStorage.getItem("lang");
     return (
       <div className="problem-container">
-        <h1>{problemLocales.title[lang]}</h1>
-
-        <img width="400px" src="/image/relationber.png" alt="" />
-        <img width="400px" src="/image/prognose_ber.png" alt="" />
+        {/* <h1>{problemLocales.title[lang]}</h1> */}
+        <h2>{problemLocales.headingberlin[lang]}</h2>
+        <br />
+        <img width="800px" src="/image/relationber.png" alt="" />
+        <br />
+        <h2>{problemLocales.forecastb[lang]}</h2>
+        <br />
+        <img width="800px" src="/image/prognose_ber.png" alt="" />
       </div>
     );
   }

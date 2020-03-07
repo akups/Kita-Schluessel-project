@@ -418,8 +418,11 @@ h1 {
 /* Problem Page */
 .problem-container {
   height: 150vh;
-  padding-left: 19vw;
-  padding-right: 19vw;
+  padding-left: 30vw;
+  padding-right: 30vw;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
 }
 
 /* Footer */
