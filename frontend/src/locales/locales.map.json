@@ -3,6 +3,11 @@
     "en": "Map",
     "de": "Karte"
   },
+  "titleAdd": {
+    "en": "Missing Kita Spots Map",
+    "de": "Fehlende Kitaplätze Karte"
+  },
+
   "kitas": {
     "en": "Kita Spots",
     "de": "Kitaplätze"
@@ -10,5 +15,33 @@
   "move": {
     "en": "Missing Kita Spots",
     "de": "Fehlende Kitaplätze"
+  },
+  "explainHamburg": {
+    "en": "Map shows missing Kita Spots by Suburb",
+    "de": "Karte ziegt wieviele KitaPlaetze Fehlt in jedes Stadteil"
+  },
+  "explainBerlin": {
+    "en": "Map shows missing Kita Spots by Postal code",
+    "de": "Karte ziegt wieviele KitaPlaetze Fehlt in jedes Postleitzahlraum"
+  },
+  "titleHamburg": {
+    "en": "Hover over a Suburb to see details",
+    "de": "Bewege über Stadteil für Detaile"
+  },
+  "titleBerlin": {
+    "en": "Hover over a Postalcode area to see details",
+    "de": "Bewege über Postleitzahlraum für Detaile"
+  },
+  "labelHamburg": {
+    "en": "Suburb",
+    "de": "Stadteil"
+  },
+  "labelBerlin": {
+    "en": "Postal Code",
+    "de": "Postleitzahl"
+  },
+  "available": {
+    "en": "Available Kita Spots",
+    "de": " Verfügbare Kitaplaetze"
   }
 }

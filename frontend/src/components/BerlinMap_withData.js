@@ -31,16 +31,16 @@ const layers = [
   "900-1109"
 ];
 const colors = [
-  "#daf5f4",
-  "#b5ecec",
-  "#89ecda",
-  "#40e0d0",
-  "#3acabb",
-  "#2d9d92",
-  "#007777",
-  "#005555",
-  "#003333",
-  "#000a0a"
+  "#e5f2f6",
+  "#cce6ee",
+  "#b2dae6",
+  "#99cede",
+  "#7fc2d6",
+  "#66b6cd",
+  "#4caac5",
+  "#329ebd",
+  "#1992b5",
+  "#0086ad"
 ];
 
 const drawLegends = () => {
@@ -76,10 +76,10 @@ class ControlPanel extends PureComponent {
 
     return (
       <div className="control-panel">
-        <h3>Berlin Missing Kita Spots Map</h3>
+        <h3>Berlin {mapLocales.titleAdd[lang]}</h3>
         <p>
-          Map showing missing Kita Spots by postal code<b>{settings.year}</b>.
-          Hover over a postal code area to see details.
+          {mapLocales.titleBerlin[lang]}
+          <b>{settings.year}</b>. {mapLocales.explainBerlin[lang]}
         </p>
         <p>{/* Data source: <a href="">Berlin City</a> */}</p>
 
@@ -99,16 +99,16 @@ const dataLayer = {
     "fill-color": {
       property: "Value",
       stops: [
-        [0, "#daf5f4"],
-        [100, "#b5ecec"],
-        [200, "#89ecda"],
-        [300, "#40e0d0"],
-        [400, "#3acabb"],
-        [500, "#2d9d92"],
-        [600, "#007777"],
-        [700, "#005555"],
-        [800, "#003333"],
-        [1109, "#000a0a"]
+        [0, "#e5f2f6"],
+        [100, "#cce6ee"],
+        [200, "#b2dae6"],
+        [300, "#99cede"],
+        [400, "#7fc2d6"],
+        [500, "#66b6cd"],
+        [600, "#4caac5"],
+        [700, "#329ebd"],
+        [800, "#1992b5"],
+        [1109, "#0086ad"]
       ]
     },
     "fill-opacity": 0.8
@@ -181,10 +181,14 @@ class BerlinMap extends Component {
     return (
       hoveredFeature && (
         <div className="tooltip" style={{ left: x, top: y }}>
-          <div>Postal Code: {hoveredFeature.properties.PLZ}</div>
-          <div>Missing Kita Spots: {hoveredFeature.properties.Value}</div>
           <div>
-            Number of Kita Spots:{" "}
+            {mapLocales.labelBerlin[lang]}: {hoveredFeature.properties.PLZ}
+          </div>
+          <div>
+            {mapLocales.move[lang]}: {hoveredFeature.properties.Value}
+          </div>
+          <div>
+            {mapLocales.available[lang]}:{" "}
             {hoveredFeature.properties.KitaPlaetzeBerlin_Plaetze}
           </div>
         </div>

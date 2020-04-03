@@ -76,10 +76,10 @@ class ControlPanel extends PureComponent {
 
     return (
       <div className="control-panel">
-        <h3>Hamburg Missing Kita Spots Map</h3>
+        <h3>Hamburg {mapLocales.titleAdd[lang]}</h3>
         <p>
-          Map showing missing Kita Spots by Suburb<b>{settings.year}</b>. Hover
-          over a Suburb to see details.
+          {mapLocales.titleHamburg[lang]}
+          <b>{settings.year}</b>. {mapLocales.explainHamburg[lang]}
         </p>
         <p>{/* Data source: <a href="">Berlin City</a> */}</p>
 
@@ -181,10 +181,15 @@ class HamburgMap extends Component {
     return (
       hoveredFeature && (
         <div className="tooltip" style={{ left: x, top: y }}>
-          <div>Suburb: {hoveredFeature.properties.Stadteile_}</div>
-          <div>Missing Kita Spots: {hoveredFeature.properties.Difference}</div>
           <div>
-            Number of Kita Spots: {hoveredFeature.properties.Kita_Spots}
+            {mapLocales.labelHamburg[lang]}:{" "}
+            {hoveredFeature.properties.Stadteile_}
+          </div>
+          <div>
+            {mapLocales.move[lang]}: {hoveredFeature.properties.Difference}
+          </div>
+          <div>
+            {mapLocales.available[lang]}: {hoveredFeature.properties.Kita_Spots}
           </div>
         </div>
       )
