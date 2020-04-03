@@ -19,28 +19,28 @@ const navStyle = {
 const lang = localStorage.getItem("lang");
 
 const layers = [
-  "-423-0",
-  "0-100",
+  "-260-100",
   "100-200",
-  "200-300",
-  "300-400",
-  "400-500",
-  "500-600",
-  "600-700",
-  "700-800",
-  "900-1109"
+  "200-400",
+  "400-600",
+  "600-800",
+  "800-1000",
+  "1000-1500",
+  "1500-2000",
+  "2000-2500",
+  "2500-4509"
 ];
 const colors = [
-  "#daf5f4",
-  "#b5ecec",
-  "#89ecda",
-  "#40e0d0",
-  "#3acabb",
-  "#2d9d92",
-  "#007777",
-  "#005555",
-  "#003333",
-  "#000a0a"
+  "#e5f2f6",
+  "#cce6ee",
+  "#b2dae6",
+  "#99cede",
+  "#7fc2d6",
+  "#66b6cd",
+  "#4caac5",
+  "#329ebd",
+  "#1992b5",
+  "#0086ad"
 ];
 
 const drawLegends = () => {
@@ -76,10 +76,10 @@ class ControlPanel extends PureComponent {
 
     return (
       <div className="control-panel">
-        <h3>Berlin Missing Kita Spots Map</h3>
+        <h3>Hamburg Missing Kita Spots Map</h3>
         <p>
-          Map showing missing Kita Spots by postal code<b>{settings.year}</b>.
-          Hover over a postal code area to see details.
+          Map showing missing Kita Spots by Suburb<b>{settings.year}</b>. Hover
+          over a Suburb to see details.
         </p>
         <p>{/* Data source: <a href="">Berlin City</a> */}</p>
 
@@ -97,18 +97,18 @@ const dataLayer = {
   type: "fill",
   paint: {
     "fill-color": {
-      property: "Value",
+      property: "Difference",
       stops: [
-        [0, "#daf5f4"],
-        [100, "#b5ecec"],
-        [200, "#89ecda"],
-        [300, "#40e0d0"],
-        [400, "#3acabb"],
-        [500, "#2d9d92"],
-        [600, "#007777"],
-        [700, "#005555"],
-        [800, "#003333"],
-        [1109, "#000a0a"]
+        [100, "#e5f2f6"],
+        [200, "#cce6ee"],
+        [400, "#b2dae6"],
+        [600, "#99cede"],
+        [800, "#7fc2d6"],
+        [1000, "#66b6cd"],
+        [1500, "#4caac5"],
+        [2000, "#329ebd"],
+        [2500, "#1992b5"],
+        [4509, "#0086ad"]
       ]
     },
     "fill-opacity": 0.8
@@ -130,13 +130,13 @@ function updateState(featureCollection) {
   };
 }
 
-class BerlinMap extends Component {
+class HamburgMap extends Component {
   state = {
     data: null,
     hoveredFeature: null,
     viewport: {
-      latitude: 52.52008,
-      longitude: 13.40495,
+      latitude: 53.57532,
+      longitude: 10.01534,
       zoom: 9.5,
       bearing: 0,
       pitch: 0,
@@ -147,7 +147,7 @@ class BerlinMap extends Component {
 
   componentDidMount() {
     let url =
-      "https://raw.githubusercontent.com/akups/Kita-Schluessel-project/master/frontend/src/data/BerlinKitaPlaetze.geojson";
+      "https://raw.githubusercontent.com/akups/Kita-Schluessel-project/master/frontend/src/data/HamburgKitaMap3.geojson";
 
     requestJson(url, (error, response) => {
       if (!error) {
@@ -181,11 +181,10 @@ class BerlinMap extends Component {
     return (
       hoveredFeature && (
         <div className="tooltip" style={{ left: x, top: y }}>
-          <div>Postal Code: {hoveredFeature.properties.PLZ}</div>
-          <div>Missing Kita Spots: {hoveredFeature.properties.Value}</div>
+          <div>Suburb: {hoveredFeature.properties.Stadteile_}</div>
+          <div>Missing Kita Spots: {hoveredFeature.properties.Difference}</div>
           <div>
-            Number of Kita Spots:{" "}
-            {hoveredFeature.properties.KitaPlaetzeBerlin_Plaetze}
+            Number of Kita Spots: {hoveredFeature.properties.Kita_Spots}
           </div>
         </div>
       )
@@ -198,7 +197,7 @@ class BerlinMap extends Component {
     return (
       <MapGL
         {...viewport}
-        mapStyle="mapbox://styles/akup21/ck7an89si3ifj1iumt6579c0z"
+        mapStyle="mapbox://styles/akup21/ck8kh9pc108551iqx52wjdake"
         onViewportChange={this._onViewportChange}
         mapboxApiAccessToken={MAPBOX_TOKEN}
         onHover={this._onHover}
@@ -226,7 +225,7 @@ class BerlinMap extends Component {
                 border: 20
               }}
             >
-              <h3>Berlin {mapLocales.move[lang]}</h3>
+              <h3>Hamburg {mapLocales.move[lang]}</h3>
             </div>
             <div class="map-overlay" id="legend">
               {drawLegends()}
@@ -238,4 +237,4 @@ class BerlinMap extends Component {
   }
 }
 
-export default BerlinMap;
+export default HamburgMap;

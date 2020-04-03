@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import discoverLocales from "../locales/locales.discover.json";
+// import Grid from "@material-ui/core/Grid";
+// import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
 export default class DiscoverHamburg extends Component {
   state = {
