@@ -111,7 +111,7 @@ const dataLayer = {
         [1109, "#0086ad"]
       ]
     },
-    "fill-opacity": 0.8
+    "fill-opacity": 0.4
   }
 };
 
