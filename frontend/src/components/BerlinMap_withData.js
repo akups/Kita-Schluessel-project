@@ -13,7 +13,7 @@ const navStyle = {
   top: 0,
   left: 0,
   padding: "10px",
-  width: 30
+  width: 30,
 };
 
 const lang = localStorage.getItem("lang");
@@ -28,7 +28,7 @@ const layers = [
   "500-600",
   "600-700",
   "700-800",
-  "900-1109"
+  "900-1109",
 ];
 const colors = [
   "#e5f2f6",
@@ -40,7 +40,7 @@ const colors = [
   "#4caac5",
   "#329ebd",
   "#1992b5",
-  "#0086ad"
+  "#0086ad",
 ];
 
 const drawLegends = () => {
@@ -53,7 +53,7 @@ const drawLegends = () => {
           backgroundColor: "white",
           display: "flex",
           justifyContent: "space-between",
-          width: 150
+          width: 150,
         }}
       >
         <span
@@ -61,7 +61,7 @@ const drawLegends = () => {
           style={{
             display: "inline-block",
             width: "20px",
-            backgroundColor: color
+            backgroundColor: color,
           }}
         ></span>
         <span style={{ color: "#003333" }}>{layer}</span>
@@ -79,7 +79,9 @@ class ControlPanel extends PureComponent {
         <h3>Berlin {mapLocales.titleAdd[lang]}</h3>
         <p>
           {mapLocales.titleBerlin[lang]}
-          <b>{settings.year}</b>. {mapLocales.explainBerlin[lang]}
+          {/* <b>{settings.year}</b>  */}
+          <br />
+          {mapLocales.explainBerlin[lang]}
         </p>
         <p>{/* Data source: <a href="">Berlin City</a> */}</p>
 
@@ -108,11 +110,11 @@ const dataLayer = {
         [600, "#4caac5"],
         [700, "#329ebd"],
         [800, "#1992b5"],
-        [1109, "#0086ad"]
-      ]
+        [1109, "#0086ad"],
+      ],
     },
-    "fill-opacity": 0.4
-  }
+    "fill-opacity": 0.4,
+  },
 };
 
 function updateState(featureCollection) {
@@ -120,13 +122,13 @@ function updateState(featureCollection) {
 
   return {
     type: "FeatureCollection",
-    features: features.map(f => {
+    features: features.map((f) => {
       const properties = {
-        ...f.properties
+        ...f.properties,
         // value
       };
       return { ...f, properties };
-    })
+    }),
   };
 }
 
@@ -141,8 +143,8 @@ class BerlinMap extends Component {
       bearing: 0,
       pitch: 0,
       width: "100vw",
-      height: "100vh"
-    }
+      height: "100vh",
+    },
   };
 
   componentDidMount() {
@@ -156,21 +158,21 @@ class BerlinMap extends Component {
     });
   }
 
-  _loadData = data => {
+  _loadData = (data) => {
     this.setState({
-      data: updateState(data) //[this.state.year]
+      data: updateState(data), //[this.state.year]
     });
   };
 
-  _onViewportChange = viewport => this.setState({ viewport });
+  _onViewportChange = (viewport) => this.setState({ viewport });
 
-  _onHover = event => {
+  _onHover = (event) => {
     const {
       features,
-      srcEvent: { offsetX, offsetY }
+      srcEvent: { offsetX, offsetY },
     } = event;
     const hoveredFeature =
-      features && features.find(f => f.layer.id === "data");
+      features && features.find((f) => f.layer.id === "data");
 
     this.setState({ hoveredFeature, x: offsetX, y: offsetY });
   };
@@ -202,7 +204,7 @@ class BerlinMap extends Component {
     return (
       <MapGL
         {...viewport}
-        mapStyle="mapbox://styles/akup21/ck7an89si3ifj1iumt6579c0z"
+        mapStyle="mapbox://styles/akup21/ck8ofgaem03k21iojla1aw58o"
         onViewportChange={this._onViewportChange}
         mapboxApiAccessToken={MAPBOX_TOKEN}
         onHover={this._onHover}
@@ -227,7 +229,7 @@ class BerlinMap extends Component {
                 width: 150,
                 height: 100,
                 backgroundColor: "white",
-                border: 20
+                border: 20,
               }}
             >
               <h3>Berlin {mapLocales.move[lang]}</h3>

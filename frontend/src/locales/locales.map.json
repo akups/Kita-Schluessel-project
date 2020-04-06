@@ -18,11 +18,11 @@
   },
   "explainHamburg": {
     "en": "Map shows missing Kita Spots by Suburb",
-    "de": "Karte ziegt wieviele KitaPlaetze Fehlt in jedes Stadteil"
+    "de": "Karte ziegt wieviele KitaPlaetze Fehlt pro Stadteil"
   },
   "explainBerlin": {
     "en": "Map shows missing Kita Spots by Postal code",
-    "de": "Karte ziegt wieviele KitaPlaetze Fehlt in jedes Postleitzahlraum"
+    "de": "Karte ziegt wieviele KitaPlaetze Fehlt pro Postleitzahlgebiet"
   },
   "titleHamburg": {
     "en": "Hover over a Suburb to see details",
@@ -30,7 +30,7 @@
   },
   "titleBerlin": {
     "en": "Hover over a Postalcode area to see details",
-    "de": "Bewege über Postleitzahlraum für Detaile"
+    "de": "Bewege Curser über Postleitzahlgebiet für Details"
   },
   "labelHamburg": {
     "en": "Suburb",
@@ -42,6 +42,6 @@
   },
   "available": {
     "en": "Available Kita Spots",
-    "de": " Verfügbare Kitaplaetze"
+    "de": "Verfügbare Kitaplaetze"
   }
 }
