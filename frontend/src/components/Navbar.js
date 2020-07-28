@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import navbarLocales from "../locales/locales.navbar.json";
 
-const Navbar = props => {
+const Navbar = (props) => {
   const [img, setImage] = useState("/image/germany.png");
 
   const imageChange = () => {
